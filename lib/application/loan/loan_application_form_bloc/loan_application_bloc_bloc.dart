@@ -83,7 +83,7 @@ class LoanApplicationBlocBloc
 
       final LoanApplicationInfo loanApplicationInfo = LoanApplicationInfo(
           applicationUniqueId: state.applicationUniqueId,
-          appicantuniqueId: currUser.uniqueId,
+          appicantUniqueId: currUser.uniqueId,
           loanApplicationName: state.loanApplicationName,
           gender: state.gender,
           selfEmployed: state.selfEmployed,
