@@ -1,24 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
+import 'package:loan_machine/injection.dart';
 
-void main() => runApp(MyApp());
+import 'presentation/core/my_app.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Row(
-            children: [
-              const Text('Hello World'),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await configureInjection(Environment.prod);
+  return runApp(MyApp());
 }

@@ -30,12 +30,45 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       yield state.copyWith(
           password: Password(e.rawPassword),
           authFailureOrSuccessOption: none());
+    }, userNameChanged: (e) async* {
+      yield state.copyWith(
+          userName: UserName(e.rawUserName),
+          authFailureOrSuccessOption: none());
+    }, enableAutoValidate: (e) async* {
+      yield state.copyWith(
+          showErrorMessages: true, authFailureOrSuccessOption: none());
+    }, obscureTextTapped: (e) async* {
+      yield state.copyWith(
+          obscureTextValue: !state.obscureTextValue,
+          authFailureOrSuccessOption: none());
     }, registerWithWithEmailandPassword: (e) async* {
-      yield* _performActionOnIAuthFacadeWithEmailAddressandPassword(
-          iAuthFacade.registerWithEmailAndPassword);
+      Either<AuthFailure, Unit> successOrfailure;
+
+      final isValidEmailAddress = state.emailAddress.isValid();
+      final isValidPassword = state.password.isValid();
+      final isValidUserName = state.userName.isValid();
+
+      if (isValidEmailAddress && isValidPassword && isValidUserName) {
+        yield state.copyWith(
+            isSubmitting: true, authFailureOrSuccessOption: none());
+
+        successOrfailure = await iAuthFacade.registerWithEmailAndPassword(
+            userName: state.userName,
+            emailAddress: state.emailAddress,
+            password: state.password);
+      }
+
+      yield state.copyWith(
+          isSubmitting: false,
+          showErrorMessages: true,
+          authFailureOrSuccessOption:
+              successOrfailure == null ? none() : some(successOrfailure));
     }, signInWithWithEmailandPassword: (e) async* {
       yield* _performActionOnIAuthFacadeWithEmailAddressandPassword(
           iAuthFacade.signInWithEmailAndPassword);
+    }, resetForgottenPassword: (e) async* {
+      yield* _performActionOnIAuthFacadeWithEmailAddressandPassword(
+          iAuthFacade.forgotPassword);
     });
   }
 
@@ -64,6 +97,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     yield state.copyWith(
         isSubmitting: false,
         showErrorMessages: true,
-        authFailureOrSuccessOption: optionOf(successOrfailure));
+        authFailureOrSuccessOption:
+            successOrfailure == null ? none() : some(successOrfailure));
   }
 }

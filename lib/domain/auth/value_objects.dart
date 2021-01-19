@@ -35,3 +35,16 @@ class Password extends ValueObject<String> {
 
   const Password._(this.value);
 }
+
+@immutable
+class UserName extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory UserName(String input) {
+    assert(input != null);
+    return UserName._(validateUserName(input: input));
+  }
+
+  const UserName._(this.value);
+}

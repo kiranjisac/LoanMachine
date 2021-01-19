@@ -5,11 +5,15 @@ import 'package:loan_machine/domain/auth/user.dart';
 import 'package:loan_machine/domain/auth/value_objects.dart';
 
 abstract class IAuthFacade {
-  Future<Option<User>> getSignInUser();
+  Future<Option<User>> getSignedInUser();
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
-      {@required EmailAddress emailAddress, @required Password password});
+      {@required UserName userName,
+      @required EmailAddress emailAddress,
+      @required Password password});
 
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword(
+      {@required EmailAddress emailAddress, @required Password password});
+  Future<Either<AuthFailure, Unit>> forgotPassword(
       {@required EmailAddress emailAddress, @required Password password});
   Future<void> signOut();
 }

@@ -14,8 +14,13 @@ class _$UserDtoTearOff {
   const _$UserDtoTearOff();
 
 // ignore: unused_element
-  _UserDto call({String emailAddress, String password, String uniqueId}) {
+  _UserDto call(
+      {String userName,
+      String emailAddress,
+      String password,
+      String uniqueId}) {
     return _UserDto(
+      userName: userName,
       emailAddress: emailAddress,
       password: password,
       uniqueId: uniqueId,
@@ -29,10 +34,12 @@ const $UserDto = _$UserDtoTearOff();
 
 /// @nodoc
 mixin _$UserDto {
+  String get userName;
   String get emailAddress;
   String get password;
   String get uniqueId;
 
+  @JsonKey(ignore: true)
   $UserDtoCopyWith<UserDto> get copyWith;
 }
 
@@ -40,7 +47,8 @@ mixin _$UserDto {
 abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
       _$UserDtoCopyWithImpl<$Res>;
-  $Res call({String emailAddress, String password, String uniqueId});
+  $Res call(
+      {String userName, String emailAddress, String password, String uniqueId});
 }
 
 /// @nodoc
@@ -53,11 +61,13 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
 
   @override
   $Res call({
+    Object userName = freezed,
     Object emailAddress = freezed,
     Object password = freezed,
     Object uniqueId = freezed,
   }) {
     return _then(_value.copyWith(
+      userName: userName == freezed ? _value.userName : userName as String,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as String,
@@ -72,7 +82,8 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   factory _$UserDtoCopyWith(_UserDto value, $Res Function(_UserDto) then) =
       __$UserDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String emailAddress, String password, String uniqueId});
+  $Res call(
+      {String userName, String emailAddress, String password, String uniqueId});
 }
 
 /// @nodoc
@@ -86,11 +97,13 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object userName = freezed,
     Object emailAddress = freezed,
     Object password = freezed,
     Object uniqueId = freezed,
   }) {
     return _then(_UserDto(
+      userName: userName == freezed ? _value.userName : userName as String,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as String,
@@ -102,9 +115,12 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_UserDto extends _UserDto {
-  const _$_UserDto({this.emailAddress, this.password, this.uniqueId})
+  const _$_UserDto(
+      {this.userName, this.emailAddress, this.password, this.uniqueId})
       : super._();
 
+  @override
+  final String userName;
   @override
   final String emailAddress;
   @override
@@ -114,13 +130,16 @@ class _$_UserDto extends _UserDto {
 
   @override
   String toString() {
-    return 'UserDto(emailAddress: $emailAddress, password: $password, uniqueId: $uniqueId)';
+    return 'UserDto(userName: $userName, emailAddress: $emailAddress, password: $password, uniqueId: $uniqueId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UserDto &&
+            (identical(other.userName, userName) ||
+                const DeepCollectionEquality()
+                    .equals(other.userName, userName)) &&
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
                     .equals(other.emailAddress, emailAddress)) &&
@@ -135,10 +154,12 @@ class _$_UserDto extends _UserDto {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(userName) ^
       const DeepCollectionEquality().hash(emailAddress) ^
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(uniqueId);
 
+  @JsonKey(ignore: true)
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith =>
       __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
@@ -147,8 +168,13 @@ class _$_UserDto extends _UserDto {
 abstract class _UserDto extends UserDto {
   const _UserDto._() : super._();
   const factory _UserDto(
-      {String emailAddress, String password, String uniqueId}) = _$_UserDto;
+      {String userName,
+      String emailAddress,
+      String password,
+      String uniqueId}) = _$_UserDto;
 
+  @override
+  String get userName;
   @override
   String get emailAddress;
   @override
@@ -156,5 +182,6 @@ abstract class _UserDto extends UserDto {
   @override
   String get uniqueId;
   @override
+  @JsonKey(ignore: true)
   _$UserDtoCopyWith<_UserDto> get copyWith;
 }
