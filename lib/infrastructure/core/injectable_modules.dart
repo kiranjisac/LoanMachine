@@ -24,20 +24,20 @@ abstract class RegisterModule {
 
       await db.execute('''
         CREATE TABLE ${Constants.loanTableName}(
-         ${Constants.loanColumnApplicationUniqueId} TEXT PRIMARY KEY,
+         ${Constants.loanColumnApplicationUniqueId} TEXT PRIMARY KEY ,
          ${Constants.loanColumnApplicantUniqueId} TEXT NOT NULL,
-         ${Constants.loanColumnApplicationName} TEXT NOT NULL),
+         ${Constants.loanColumnApplicationName} TEXT NOT NULL,
          ${Constants.loanColumnGender} TEXT NOT NULL,
-         ${Constants.loanColumnMarried} TEXT NOT NULL),
-         ${Constants.loanColumnEducation} TEXT NOT NULL),
-         ${Constants.loanColumnSelfEmployed} TEXT NOT NULL),
-         ${Constants.loanColumnDependents} TEXT NOT NULL),
-         ${Constants.loanColumnApplicantIncome} TEXT NOT NULL),
-         ${Constants.loanColumnCoApplicantIncome} TEXT NOT NULL),
-         ${Constants.loanColumnTerm} TEXT NOT NULL),
-         ${Constants.loanColumnAmount} TEXT NOT NULL),
-         ${Constants.loanColumnCreditHistory} TEXT NOT NULL),
-         ${Constants.loanColumnPropertyArea} TEXT NOT NULL),
+         ${Constants.loanColumnMarried} TEXT NOT NULL,
+         ${Constants.loanColumnEducation} TEXT NOT NULL,
+         ${Constants.loanColumnSelfEmployed} TEXT NOT NULL,
+         ${Constants.loanColumnDependents} TEXT NOT NULL,
+         ${Constants.loanColumnApplicantIncome} TEXT NOT NULL,
+         ${Constants.loanColumnCoApplicantIncome} TEXT NOT NULL,
+         ${Constants.loanColumnTerm} TEXT NOT NULL,
+         ${Constants.loanColumnAmount} TEXT NOT NULL,
+         ${Constants.loanColumnCreditHistory} TEXT NOT NULL,
+         ${Constants.loanColumnPropertyArea} TEXT NOT NULL)
            ''');
     }
 

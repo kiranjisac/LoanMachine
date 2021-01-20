@@ -10,6 +10,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/home_page.dart';
+import '../pages/loan_application_form/loan_application_form_page.dart';
 import '../sign_in_up/widgets/forgot_password.dart';
 import '../sign_in_up/widgets/sign_in_page.dart';
 import '../sign_in_up/widgets/sign_up_page.dart';
@@ -21,12 +22,14 @@ class Routes {
   static const String signInPage = '/sign-in-page';
   static const String homePage = '/home-page';
   static const String forgotPasswordPage = '/forgot-password-page';
+  static const String loanApplicationFormPage = '/loan-application-form-page';
   static const all = <String>{
     splashScreen,
     signUpPage,
     signInPage,
     homePage,
     forgotPasswordPage,
+    loanApplicationFormPage,
   };
 }
 
@@ -39,6 +42,7 @@ class Router extends RouterBase {
     RouteDef(Routes.signInPage, page: SignInPage),
     RouteDef(Routes.homePage, page: HomePage),
     RouteDef(Routes.forgotPasswordPage, page: ForgotPasswordPage),
+    RouteDef(Routes.loanApplicationFormPage, page: LoanApplicationFormPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -73,6 +77,12 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    LoanApplicationFormPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => LoanApplicationFormPage(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -91,4 +101,7 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushForgotPasswordPage() =>
       push<dynamic>(Routes.forgotPasswordPage);
+
+  Future<dynamic> pushLoanApplicationFormPage() =>
+      push<dynamic>(Routes.loanApplicationFormPage);
 }

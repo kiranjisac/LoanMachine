@@ -11,22 +11,22 @@ import 'package:loan_machine/domain/loan/loan_application_failure.dart';
 import 'package:loan_machine/domain/loan/loan_application_info.dart';
 import 'package:loan_machine/domain/loan/value_objects.dart';
 import 'package:dartz/dartz.dart';
-part 'loan_application_bloc_event.dart';
-part 'loan_application_bloc_state.dart';
-part 'loan_application_bloc_bloc.freezed.dart';
+part 'loan_application_event.dart';
+part 'loan_application_state.dart';
+part 'loan_application_bloc.freezed.dart';
 
 @injectable
-class LoanApplicationBlocBloc
-    extends Bloc<LoanApplicationBlocEvent, LoanApplicationBlocState> {
+class LoanApplicationBloc
+    extends Bloc<LoanApplicationEvent, LoanApplicationState> {
   IAuthFacade iAuthFacade;
   ILoanApplicationRepository iLoanApplicationRepository;
 
-  LoanApplicationBlocBloc(this.iLoanApplicationRepository, this.iAuthFacade)
-      : super(LoanApplicationBlocState.initial());
+  LoanApplicationBloc(this.iLoanApplicationRepository, this.iAuthFacade)
+      : super(LoanApplicationState.initial());
 
   @override
-  Stream<LoanApplicationBlocState> mapEventToState(
-    LoanApplicationBlocEvent event,
+  Stream<LoanApplicationState> mapEventToState(
+    LoanApplicationEvent event,
   ) async* {
     yield* event.map(genderChanged: (e) async* {
       yield state.copyWith(
@@ -101,7 +101,7 @@ class LoanApplicationBlocBloc
         yield state.copyWith(
             isSubmitting: true, loanFailureOrSuccessOption: none());
 
-        successOrFailure = await iLoanApplicationRepository.saveDataAndPredict(
+        successOrFailure = await iLoanApplicationRepository.saveData(
             loanApplicationInfo: loanApplicationInfo);
       }
 

@@ -6,6 +6,7 @@ import 'package:loan_machine/domain/core/value_validators.dart';
 
 @immutable
 class LoanApplicationName extends ValueObject<String> {
+  @override
   final Either<ValueFailure<String>, String> value;
 
   factory LoanApplicationName(String input) {
@@ -94,22 +95,51 @@ class SelfEmployed extends ValueObject<String> {
 }
 
 @immutable
-class PropertyArea extends ValueObject<String> {
+class Dependents extends ValueObject<int> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<int>, int> value;
 
-  factory PropertyArea(String input) {
+  factory Dependents(int input) {
     assert(input != null);
 
-    if (input == "Urban" || input == "Rural" || input == "Semiurban") {
-      return PropertyArea._(right(input));
+    const possibleOptions = [0, 1, 2, 3];
+
+    if (possibleOptions.contains(input)) {
+      return Dependents._(right(input));
     } else {
-      return PropertyArea._(left(ValueFailure.loan(
-          LoanValueFailures.invalidPropertyArea(invalidValue: input))));
+      return Dependents._(left(ValueFailure.loan(
+          LoanValueFailures.invalidDependentsNo(invalidValue: input))));
     }
   }
 
-  const PropertyArea._(this.value);
+  const Dependents._(this.value);
+}
+
+@immutable
+class ApplicantIncome extends ValueObject<double> {
+  @override
+  final Either<ValueFailure<double>, double> value;
+
+  factory ApplicantIncome(String input) {
+    assert(input != null);
+    return ApplicantIncome._(validateIntegerFromString(input: input));
+  }
+
+  const ApplicantIncome._(this.value);
+}
+
+@immutable
+class CoApplicantIncome extends ValueObject<double> {
+  @override
+  final Either<ValueFailure<double>, double> value;
+
+  factory CoApplicantIncome(String input) {
+    assert(input != null);
+
+    return CoApplicantIncome._(validateIntegerFromString(input: input));
+  }
+
+  const CoApplicantIncome._(this.value);
 }
 
 @immutable
@@ -159,49 +189,20 @@ class CreditHistory extends ValueObject<String> {
 }
 
 @immutable
-class ApplicantIncome extends ValueObject<double> {
+class PropertyArea extends ValueObject<String> {
   @override
-  final Either<ValueFailure<double>, double> value;
+  final Either<ValueFailure<String>, String> value;
 
-  factory ApplicantIncome(String input) {
-    assert(input != null);
-    return ApplicantIncome._(validateIntegerFromString(input: input));
-  }
-
-  const ApplicantIncome._(this.value);
-}
-
-@immutable
-class CoApplicantIncome extends ValueObject<double> {
-  @override
-  final Either<ValueFailure<double>, double> value;
-
-  factory CoApplicantIncome(String input) {
+  factory PropertyArea(String input) {
     assert(input != null);
 
-    return CoApplicantIncome._(validateIntegerFromString(input: input));
-  }
-
-  const CoApplicantIncome._(this.value);
-}
-
-@immutable
-class Dependents extends ValueObject<int> {
-  @override
-  final Either<ValueFailure<int>, int> value;
-
-  factory Dependents(int input) {
-    assert(input != null);
-
-    const possibleOptions = [0, 1, 2, 3];
-
-    if (possibleOptions.contains(input)) {
-      return Dependents._(right(input));
+    if (input == "Urban" || input == "Rural" || input == "Semiurban") {
+      return PropertyArea._(right(input));
     } else {
-      return Dependents._(left(
-          const ValueFailure.loan(LoanValueFailures.invalidDependentsNo())));
+      return PropertyArea._(left(ValueFailure.loan(
+          LoanValueFailures.invalidPropertyArea(invalidValue: input))));
     }
   }
 
-  const Dependents._(this.value);
+  const PropertyArea._(this.value);
 }

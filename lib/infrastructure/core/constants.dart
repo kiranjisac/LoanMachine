@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Constants {
   const Constants();
   static const String databaseName = "LoanMachine.db";
@@ -25,4 +27,8 @@ class Constants {
   static const loanColumnPropertyArea = "propertyArea";
   static const loanColumnTerm = "term";
   static const loanColumnCreditHistory = "creditHistory";
+}
+
+class TextStyles {
+  static const textStyleNormalBlack = TextStyle(color: Colors.black);
 }

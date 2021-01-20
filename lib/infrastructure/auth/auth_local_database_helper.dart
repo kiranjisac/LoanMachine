@@ -53,7 +53,6 @@ class AuthLocalDatabaseHelper implements LocalDatabaseHelper {
   @override
   Future<Either<DatabaseFailures, Unit>> insert(
       Map<String, dynamic> row) async {
-    //final db = await instance.database;
     await db.insert(Constants.tableName, row).catchError((_) {
       left(const DatabaseFailures.unSuccessful());
     });

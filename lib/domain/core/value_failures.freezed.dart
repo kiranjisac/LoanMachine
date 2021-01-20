@@ -919,22 +919,6 @@ class _$LoanValueFailuresTearOff {
   }
 
 // ignore: unused_element
-  _InvalidApplicantIncome<T> invalidApplicantIncome<T>(
-      {@required T invalidValue}) {
-    return _InvalidApplicantIncome<T>(
-      invalidValue: invalidValue,
-    );
-  }
-
-// ignore: unused_element
-  _InvalidCoApplicantIncome<T> invalidCoApplicantIncome<T>(
-      {@required T invalidValue}) {
-    return _InvalidCoApplicantIncome<T>(
-      invalidValue: invalidValue,
-    );
-  }
-
-// ignore: unused_element
   _InvalidLoanAmount<T> invalidLoanAmount<T>({@required T invalidValue}) {
     return _InvalidLoanAmount<T>(
       invalidValue: invalidValue,
@@ -949,13 +933,17 @@ class _$LoanValueFailuresTearOff {
   }
 
 // ignore: unused_element
-  _InvalidDependentsNo<T> invalidDependentsNo<T>() {
-    return _InvalidDependentsNo<T>();
+  _InvalidDependentsNo<T> invalidDependentsNo<T>({@required T invalidValue}) {
+    return _InvalidDependentsNo<T>(
+      invalidValue: invalidValue,
+    );
   }
 
 // ignore: unused_element
-  _IntergerNotPositive<T> integerNotPositive<T>() {
-    return _IntergerNotPositive<T>();
+  _IntergerNotPositive<T> integerNotPositive<T>({@required T invalidValue}) {
+    return _IntergerNotPositive<T>(
+      invalidValue: invalidValue,
+    );
   }
 
 // ignore: unused_element
@@ -979,6 +967,8 @@ const $LoanValueFailures = _$LoanValueFailuresTearOff();
 
 /// @nodoc
 mixin _$LoanValueFailures<T> {
+  T get invalidValue;
+
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult invalidGender(T invalidValue),
@@ -987,12 +977,10 @@ mixin _$LoanValueFailures<T> {
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   });
@@ -1004,12 +992,10 @@ mixin _$LoanValueFailures<T> {
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -1023,9 +1009,6 @@ mixin _$LoanValueFailures<T> {
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1041,8 +1024,6 @@ mixin _$LoanValueFailures<T> {
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1051,6 +1032,9 @@ mixin _$LoanValueFailures<T> {
     TResult invalidCreditHistory(_InvalidCreditHistory<T> value),
     @required TResult orElse(),
   });
+
+  @JsonKey(ignore: true)
+  $LoanValueFailuresCopyWith<T, LoanValueFailures<T>> get copyWith;
 }
 
 /// @nodoc
@@ -1058,6 +1042,7 @@ abstract class $LoanValueFailuresCopyWith<T, $Res> {
   factory $LoanValueFailuresCopyWith(LoanValueFailures<T> value,
           $Res Function(LoanValueFailures<T>) then) =
       _$LoanValueFailuresCopyWithImpl<T, $Res>;
+  $Res call({T invalidValue});
 }
 
 /// @nodoc
@@ -1068,13 +1053,25 @@ class _$LoanValueFailuresCopyWithImpl<T, $Res>
   final LoanValueFailures<T> _value;
   // ignore: unused_field
   final $Res Function(LoanValueFailures<T>) _then;
+
+  @override
+  $Res call({
+    Object invalidValue = freezed,
+  }) {
+    return _then(_value.copyWith(
+      invalidValue:
+          invalidValue == freezed ? _value.invalidValue : invalidValue as T,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$InvalidGenderCopyWith<T, $Res> {
+abstract class _$InvalidGenderCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidGenderCopyWith(
           _InvalidGender<T> value, $Res Function(_InvalidGender<T>) then) =
       __$InvalidGenderCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -1150,12 +1147,10 @@ class _$_InvalidGender<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -1165,8 +1160,6 @@ class _$_InvalidGender<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -1185,12 +1178,10 @@ class _$_InvalidGender<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -1212,9 +1203,6 @@ class _$_InvalidGender<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1228,8 +1216,6 @@ class _$_InvalidGender<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -1248,8 +1234,6 @@ class _$_InvalidGender<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1270,16 +1254,20 @@ abstract class _InvalidGender<T> implements LoanValueFailures<T> {
   const factory _InvalidGender({@required T invalidValue}) =
       _$_InvalidGender<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$InvalidGenderCopyWith<T, _InvalidGender<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$InvalidMarriedStatusCopyWith<T, $Res> {
+abstract class _$InvalidMarriedStatusCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidMarriedStatusCopyWith(_InvalidMarriedStatus<T> value,
           $Res Function(_InvalidMarriedStatus<T>) then) =
       __$InvalidMarriedStatusCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -1358,12 +1346,10 @@ class _$_InvalidMarriedStatus<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -1373,8 +1359,6 @@ class _$_InvalidMarriedStatus<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -1393,12 +1377,10 @@ class _$_InvalidMarriedStatus<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -1420,9 +1402,6 @@ class _$_InvalidMarriedStatus<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1436,8 +1415,6 @@ class _$_InvalidMarriedStatus<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -1456,8 +1433,6 @@ class _$_InvalidMarriedStatus<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1478,16 +1453,20 @@ abstract class _InvalidMarriedStatus<T> implements LoanValueFailures<T> {
   const factory _InvalidMarriedStatus({@required T invalidValue}) =
       _$_InvalidMarriedStatus<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$InvalidMarriedStatusCopyWith<T, _InvalidMarriedStatus<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$StringEmptyCopyWith<T, $Res> {
+abstract class _$StringEmptyCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$StringEmptyCopyWith(
           _StringEmpty<T> value, $Res Function(_StringEmpty<T>) then) =
       __$StringEmptyCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -1563,12 +1542,10 @@ class _$_StringEmpty<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -1578,8 +1555,6 @@ class _$_StringEmpty<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -1598,12 +1573,10 @@ class _$_StringEmpty<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -1625,9 +1598,6 @@ class _$_StringEmpty<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1641,8 +1611,6 @@ class _$_StringEmpty<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -1661,8 +1629,6 @@ class _$_StringEmpty<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1682,16 +1648,20 @@ class _$_StringEmpty<T>
 abstract class _StringEmpty<T> implements LoanValueFailures<T> {
   const factory _StringEmpty({@required T invalidValue}) = _$_StringEmpty<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$StringEmptyCopyWith<T, _StringEmpty<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$InvalidEducationStatusCopyWith<T, $Res> {
+abstract class _$InvalidEducationStatusCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidEducationStatusCopyWith(_InvalidEducationStatus<T> value,
           $Res Function(_InvalidEducationStatus<T>) then) =
       __$InvalidEducationStatusCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -1771,12 +1741,10 @@ class _$_InvalidEducationStatus<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -1786,8 +1754,6 @@ class _$_InvalidEducationStatus<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -1806,12 +1772,10 @@ class _$_InvalidEducationStatus<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -1833,9 +1797,6 @@ class _$_InvalidEducationStatus<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1849,8 +1810,6 @@ class _$_InvalidEducationStatus<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -1869,8 +1828,6 @@ class _$_InvalidEducationStatus<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -1891,17 +1848,21 @@ abstract class _InvalidEducationStatus<T> implements LoanValueFailures<T> {
   const factory _InvalidEducationStatus({@required T invalidValue}) =
       _$_InvalidEducationStatus<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$InvalidEducationStatusCopyWith<T, _InvalidEducationStatus<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$InvalidSelfEmployedStatusCopyWith<T, $Res> {
+abstract class _$InvalidSelfEmployedStatusCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidSelfEmployedStatusCopyWith(
           _InvalidSelfEmployedStatus<T> value,
           $Res Function(_InvalidSelfEmployedStatus<T>) then) =
       __$InvalidSelfEmployedStatusCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -1980,12 +1941,10 @@ class _$_InvalidSelfEmployedStatus<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -1995,8 +1954,6 @@ class _$_InvalidSelfEmployedStatus<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -2015,12 +1972,10 @@ class _$_InvalidSelfEmployedStatus<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -2042,9 +1997,6 @@ class _$_InvalidSelfEmployedStatus<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -2058,8 +2010,6 @@ class _$_InvalidSelfEmployedStatus<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -2078,8 +2028,6 @@ class _$_InvalidSelfEmployedStatus<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -2100,17 +2048,21 @@ abstract class _InvalidSelfEmployedStatus<T> implements LoanValueFailures<T> {
   const factory _InvalidSelfEmployedStatus({@required T invalidValue}) =
       _$_InvalidSelfEmployedStatus<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$InvalidSelfEmployedStatusCopyWith<T, _InvalidSelfEmployedStatus<T>>
       get copyWith;
 }
 
 /// @nodoc
-abstract class _$InvalidPropertyAreaCopyWith<T, $Res> {
+abstract class _$InvalidPropertyAreaCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidPropertyAreaCopyWith(_InvalidPropertyArea<T> value,
           $Res Function(_InvalidPropertyArea<T>) then) =
       __$InvalidPropertyAreaCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -2188,12 +2140,10 @@ class _$_InvalidPropertyArea<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -2203,8 +2153,6 @@ class _$_InvalidPropertyArea<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -2223,12 +2171,10 @@ class _$_InvalidPropertyArea<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -2250,9 +2196,6 @@ class _$_InvalidPropertyArea<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -2266,8 +2209,6 @@ class _$_InvalidPropertyArea<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -2286,8 +2227,6 @@ class _$_InvalidPropertyArea<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -2308,434 +2247,20 @@ abstract class _InvalidPropertyArea<T> implements LoanValueFailures<T> {
   const factory _InvalidPropertyArea({@required T invalidValue}) =
       _$_InvalidPropertyArea<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$InvalidPropertyAreaCopyWith<T, _InvalidPropertyArea<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$InvalidApplicantIncomeCopyWith<T, $Res> {
-  factory _$InvalidApplicantIncomeCopyWith(_InvalidApplicantIncome<T> value,
-          $Res Function(_InvalidApplicantIncome<T>) then) =
-      __$InvalidApplicantIncomeCopyWithImpl<T, $Res>;
-  $Res call({T invalidValue});
-}
-
-/// @nodoc
-class __$InvalidApplicantIncomeCopyWithImpl<T, $Res>
-    extends _$LoanValueFailuresCopyWithImpl<T, $Res>
-    implements _$InvalidApplicantIncomeCopyWith<T, $Res> {
-  __$InvalidApplicantIncomeCopyWithImpl(_InvalidApplicantIncome<T> _value,
-      $Res Function(_InvalidApplicantIncome<T>) _then)
-      : super(_value, (v) => _then(v as _InvalidApplicantIncome<T>));
-
-  @override
-  _InvalidApplicantIncome<T> get _value =>
-      super._value as _InvalidApplicantIncome<T>;
-
-  @override
-  $Res call({
-    Object invalidValue = freezed,
-  }) {
-    return _then(_InvalidApplicantIncome<T>(
-      invalidValue:
-          invalidValue == freezed ? _value.invalidValue : invalidValue as T,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_InvalidApplicantIncome<T>
-    with DiagnosticableTreeMixin
-    implements _InvalidApplicantIncome<T> {
-  const _$_InvalidApplicantIncome({@required this.invalidValue})
-      : assert(invalidValue != null);
-
-  @override
-  final T invalidValue;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoanValueFailures<$T>.invalidApplicantIncome(invalidValue: $invalidValue)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'LoanValueFailures<$T>.invalidApplicantIncome'))
-      ..add(DiagnosticsProperty('invalidValue', invalidValue));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _InvalidApplicantIncome<T> &&
-            (identical(other.invalidValue, invalidValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.invalidValue, invalidValue)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(invalidValue);
-
-  @JsonKey(ignore: true)
-  @override
-  _$InvalidApplicantIncomeCopyWith<T, _InvalidApplicantIncome<T>>
-      get copyWith =>
-          __$InvalidApplicantIncomeCopyWithImpl<T, _InvalidApplicantIncome<T>>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult invalidGender(T invalidValue),
-    @required TResult invalidMarriedStatus(T invalidValue),
-    @required TResult stringEmpty(T invalidValue),
-    @required TResult invalidEducationStatus(T invalidValue),
-    @required TResult invalidSelfEmployedStatus(T invalidValue),
-    @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
-    @required TResult invalidLoanAmount(T invalidValue),
-    @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
-    @required TResult invalidIntegerValue(T invalidValue),
-    @required TResult invalidCreditHistory(T invalidValue),
-  }) {
-    assert(invalidGender != null);
-    assert(invalidMarriedStatus != null);
-    assert(stringEmpty != null);
-    assert(invalidEducationStatus != null);
-    assert(invalidSelfEmployedStatus != null);
-    assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
-    assert(invalidLoanAmount != null);
-    assert(invalidLoanTerm != null);
-    assert(invalidDependentsNo != null);
-    assert(integerNotPositive != null);
-    assert(invalidIntegerValue != null);
-    assert(invalidCreditHistory != null);
-    return invalidApplicantIncome(invalidValue);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult invalidGender(T invalidValue),
-    TResult invalidMarriedStatus(T invalidValue),
-    TResult stringEmpty(T invalidValue),
-    TResult invalidEducationStatus(T invalidValue),
-    TResult invalidSelfEmployedStatus(T invalidValue),
-    TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
-    TResult invalidLoanAmount(T invalidValue),
-    TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
-    TResult invalidIntegerValue(T invalidValue),
-    TResult invalidCreditHistory(T invalidValue),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (invalidApplicantIncome != null) {
-      return invalidApplicantIncome(invalidValue);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult invalidGender(_InvalidGender<T> value),
-    @required TResult invalidMarriedStatus(_InvalidMarriedStatus<T> value),
-    @required TResult stringEmpty(_StringEmpty<T> value),
-    @required TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
-    @required
-        TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
-    @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
-    @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
-    @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
-    @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
-    @required TResult integerNotPositive(_IntergerNotPositive<T> value),
-    @required TResult invalidIntegerValue(_InvalidIntegerValue<T> value),
-    @required TResult invalidCreditHistory(_InvalidCreditHistory<T> value),
-  }) {
-    assert(invalidGender != null);
-    assert(invalidMarriedStatus != null);
-    assert(stringEmpty != null);
-    assert(invalidEducationStatus != null);
-    assert(invalidSelfEmployedStatus != null);
-    assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
-    assert(invalidLoanAmount != null);
-    assert(invalidLoanTerm != null);
-    assert(invalidDependentsNo != null);
-    assert(integerNotPositive != null);
-    assert(invalidIntegerValue != null);
-    assert(invalidCreditHistory != null);
-    return invalidApplicantIncome(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult invalidGender(_InvalidGender<T> value),
-    TResult invalidMarriedStatus(_InvalidMarriedStatus<T> value),
-    TResult stringEmpty(_StringEmpty<T> value),
-    TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
-    TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
-    TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
-    TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
-    TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
-    TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
-    TResult integerNotPositive(_IntergerNotPositive<T> value),
-    TResult invalidIntegerValue(_InvalidIntegerValue<T> value),
-    TResult invalidCreditHistory(_InvalidCreditHistory<T> value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (invalidApplicantIncome != null) {
-      return invalidApplicantIncome(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InvalidApplicantIncome<T> implements LoanValueFailures<T> {
-  const factory _InvalidApplicantIncome({@required T invalidValue}) =
-      _$_InvalidApplicantIncome<T>;
-
-  T get invalidValue;
-  @JsonKey(ignore: true)
-  _$InvalidApplicantIncomeCopyWith<T, _InvalidApplicantIncome<T>> get copyWith;
-}
-
-/// @nodoc
-abstract class _$InvalidCoApplicantIncomeCopyWith<T, $Res> {
-  factory _$InvalidCoApplicantIncomeCopyWith(_InvalidCoApplicantIncome<T> value,
-          $Res Function(_InvalidCoApplicantIncome<T>) then) =
-      __$InvalidCoApplicantIncomeCopyWithImpl<T, $Res>;
-  $Res call({T invalidValue});
-}
-
-/// @nodoc
-class __$InvalidCoApplicantIncomeCopyWithImpl<T, $Res>
-    extends _$LoanValueFailuresCopyWithImpl<T, $Res>
-    implements _$InvalidCoApplicantIncomeCopyWith<T, $Res> {
-  __$InvalidCoApplicantIncomeCopyWithImpl(_InvalidCoApplicantIncome<T> _value,
-      $Res Function(_InvalidCoApplicantIncome<T>) _then)
-      : super(_value, (v) => _then(v as _InvalidCoApplicantIncome<T>));
-
-  @override
-  _InvalidCoApplicantIncome<T> get _value =>
-      super._value as _InvalidCoApplicantIncome<T>;
-
-  @override
-  $Res call({
-    Object invalidValue = freezed,
-  }) {
-    return _then(_InvalidCoApplicantIncome<T>(
-      invalidValue:
-          invalidValue == freezed ? _value.invalidValue : invalidValue as T,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_InvalidCoApplicantIncome<T>
-    with DiagnosticableTreeMixin
-    implements _InvalidCoApplicantIncome<T> {
-  const _$_InvalidCoApplicantIncome({@required this.invalidValue})
-      : assert(invalidValue != null);
-
-  @override
-  final T invalidValue;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoanValueFailures<$T>.invalidCoApplicantIncome(invalidValue: $invalidValue)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'LoanValueFailures<$T>.invalidCoApplicantIncome'))
-      ..add(DiagnosticsProperty('invalidValue', invalidValue));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _InvalidCoApplicantIncome<T> &&
-            (identical(other.invalidValue, invalidValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.invalidValue, invalidValue)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(invalidValue);
-
-  @JsonKey(ignore: true)
-  @override
-  _$InvalidCoApplicantIncomeCopyWith<T, _InvalidCoApplicantIncome<T>>
-      get copyWith => __$InvalidCoApplicantIncomeCopyWithImpl<T,
-          _InvalidCoApplicantIncome<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult invalidGender(T invalidValue),
-    @required TResult invalidMarriedStatus(T invalidValue),
-    @required TResult stringEmpty(T invalidValue),
-    @required TResult invalidEducationStatus(T invalidValue),
-    @required TResult invalidSelfEmployedStatus(T invalidValue),
-    @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
-    @required TResult invalidLoanAmount(T invalidValue),
-    @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
-    @required TResult invalidIntegerValue(T invalidValue),
-    @required TResult invalidCreditHistory(T invalidValue),
-  }) {
-    assert(invalidGender != null);
-    assert(invalidMarriedStatus != null);
-    assert(stringEmpty != null);
-    assert(invalidEducationStatus != null);
-    assert(invalidSelfEmployedStatus != null);
-    assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
-    assert(invalidLoanAmount != null);
-    assert(invalidLoanTerm != null);
-    assert(invalidDependentsNo != null);
-    assert(integerNotPositive != null);
-    assert(invalidIntegerValue != null);
-    assert(invalidCreditHistory != null);
-    return invalidCoApplicantIncome(invalidValue);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult invalidGender(T invalidValue),
-    TResult invalidMarriedStatus(T invalidValue),
-    TResult stringEmpty(T invalidValue),
-    TResult invalidEducationStatus(T invalidValue),
-    TResult invalidSelfEmployedStatus(T invalidValue),
-    TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
-    TResult invalidLoanAmount(T invalidValue),
-    TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
-    TResult invalidIntegerValue(T invalidValue),
-    TResult invalidCreditHistory(T invalidValue),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (invalidCoApplicantIncome != null) {
-      return invalidCoApplicantIncome(invalidValue);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult invalidGender(_InvalidGender<T> value),
-    @required TResult invalidMarriedStatus(_InvalidMarriedStatus<T> value),
-    @required TResult stringEmpty(_StringEmpty<T> value),
-    @required TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
-    @required
-        TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
-    @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
-    @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
-    @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
-    @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
-    @required TResult integerNotPositive(_IntergerNotPositive<T> value),
-    @required TResult invalidIntegerValue(_InvalidIntegerValue<T> value),
-    @required TResult invalidCreditHistory(_InvalidCreditHistory<T> value),
-  }) {
-    assert(invalidGender != null);
-    assert(invalidMarriedStatus != null);
-    assert(stringEmpty != null);
-    assert(invalidEducationStatus != null);
-    assert(invalidSelfEmployedStatus != null);
-    assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
-    assert(invalidLoanAmount != null);
-    assert(invalidLoanTerm != null);
-    assert(invalidDependentsNo != null);
-    assert(integerNotPositive != null);
-    assert(invalidIntegerValue != null);
-    assert(invalidCreditHistory != null);
-    return invalidCoApplicantIncome(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult invalidGender(_InvalidGender<T> value),
-    TResult invalidMarriedStatus(_InvalidMarriedStatus<T> value),
-    TResult stringEmpty(_StringEmpty<T> value),
-    TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
-    TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
-    TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
-    TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
-    TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
-    TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
-    TResult integerNotPositive(_IntergerNotPositive<T> value),
-    TResult invalidIntegerValue(_InvalidIntegerValue<T> value),
-    TResult invalidCreditHistory(_InvalidCreditHistory<T> value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (invalidCoApplicantIncome != null) {
-      return invalidCoApplicantIncome(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InvalidCoApplicantIncome<T> implements LoanValueFailures<T> {
-  const factory _InvalidCoApplicantIncome({@required T invalidValue}) =
-      _$_InvalidCoApplicantIncome<T>;
-
-  T get invalidValue;
-  @JsonKey(ignore: true)
-  _$InvalidCoApplicantIncomeCopyWith<T, _InvalidCoApplicantIncome<T>>
-      get copyWith;
-}
-
-/// @nodoc
-abstract class _$InvalidLoanAmountCopyWith<T, $Res> {
+abstract class _$InvalidLoanAmountCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidLoanAmountCopyWith(_InvalidLoanAmount<T> value,
           $Res Function(_InvalidLoanAmount<T>) then) =
       __$InvalidLoanAmountCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -2813,12 +2338,10 @@ class _$_InvalidLoanAmount<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -2828,8 +2351,6 @@ class _$_InvalidLoanAmount<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -2848,12 +2369,10 @@ class _$_InvalidLoanAmount<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -2875,9 +2394,6 @@ class _$_InvalidLoanAmount<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -2891,8 +2407,6 @@ class _$_InvalidLoanAmount<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -2911,8 +2425,6 @@ class _$_InvalidLoanAmount<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -2933,16 +2445,20 @@ abstract class _InvalidLoanAmount<T> implements LoanValueFailures<T> {
   const factory _InvalidLoanAmount({@required T invalidValue}) =
       _$_InvalidLoanAmount<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$InvalidLoanAmountCopyWith<T, _InvalidLoanAmount<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$InvalidLoanTermCopyWith<T, $Res> {
+abstract class _$InvalidLoanTermCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidLoanTermCopyWith(
           _InvalidLoanTerm<T> value, $Res Function(_InvalidLoanTerm<T>) then) =
       __$InvalidLoanTermCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -3019,12 +2535,10 @@ class _$_InvalidLoanTerm<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -3034,8 +2548,6 @@ class _$_InvalidLoanTerm<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -3054,12 +2566,10 @@ class _$_InvalidLoanTerm<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -3081,9 +2591,6 @@ class _$_InvalidLoanTerm<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3097,8 +2604,6 @@ class _$_InvalidLoanTerm<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -3117,8 +2622,6 @@ class _$_InvalidLoanTerm<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3139,16 +2642,21 @@ abstract class _InvalidLoanTerm<T> implements LoanValueFailures<T> {
   const factory _InvalidLoanTerm({@required T invalidValue}) =
       _$_InvalidLoanTerm<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$InvalidLoanTermCopyWith<T, _InvalidLoanTerm<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$InvalidDependentsNoCopyWith<T, $Res> {
+abstract class _$InvalidDependentsNoCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidDependentsNoCopyWith(_InvalidDependentsNo<T> value,
           $Res Function(_InvalidDependentsNo<T>) then) =
       __$InvalidDependentsNoCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T invalidValue});
 }
 
 /// @nodoc
@@ -3161,17 +2669,31 @@ class __$InvalidDependentsNoCopyWithImpl<T, $Res>
 
   @override
   _InvalidDependentsNo<T> get _value => super._value as _InvalidDependentsNo<T>;
+
+  @override
+  $Res call({
+    Object invalidValue = freezed,
+  }) {
+    return _then(_InvalidDependentsNo<T>(
+      invalidValue:
+          invalidValue == freezed ? _value.invalidValue : invalidValue as T,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_InvalidDependentsNo<T>
     with DiagnosticableTreeMixin
     implements _InvalidDependentsNo<T> {
-  const _$_InvalidDependentsNo();
+  const _$_InvalidDependentsNo({@required this.invalidValue})
+      : assert(invalidValue != null);
+
+  @override
+  final T invalidValue;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoanValueFailures<$T>.invalidDependentsNo()';
+    return 'LoanValueFailures<$T>.invalidDependentsNo(invalidValue: $invalidValue)';
   }
 
   @override
@@ -3179,16 +2701,28 @@ class _$_InvalidDependentsNo<T>
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'LoanValueFailures<$T>.invalidDependentsNo'));
+          'type', 'LoanValueFailures<$T>.invalidDependentsNo'))
+      ..add(DiagnosticsProperty('invalidValue', invalidValue));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InvalidDependentsNo<T>);
+    return identical(this, other) ||
+        (other is _InvalidDependentsNo<T> &&
+            (identical(other.invalidValue, invalidValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.invalidValue, invalidValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(invalidValue);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InvalidDependentsNoCopyWith<T, _InvalidDependentsNo<T>> get copyWith =>
+      __$InvalidDependentsNoCopyWithImpl<T, _InvalidDependentsNo<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3199,12 +2733,10 @@ class _$_InvalidDependentsNo<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -3214,15 +2746,13 @@ class _$_InvalidDependentsNo<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
     assert(integerNotPositive != null);
     assert(invalidIntegerValue != null);
     assert(invalidCreditHistory != null);
-    return invalidDependentsNo();
+    return invalidDependentsNo(invalidValue);
   }
 
   @override
@@ -3234,19 +2764,17 @@ class _$_InvalidDependentsNo<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidDependentsNo != null) {
-      return invalidDependentsNo();
+      return invalidDependentsNo(invalidValue);
     }
     return orElse();
   }
@@ -3261,9 +2789,6 @@ class _$_InvalidDependentsNo<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3277,8 +2802,6 @@ class _$_InvalidDependentsNo<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -3297,8 +2820,6 @@ class _$_InvalidDependentsNo<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3316,14 +2837,24 @@ class _$_InvalidDependentsNo<T>
 }
 
 abstract class _InvalidDependentsNo<T> implements LoanValueFailures<T> {
-  const factory _InvalidDependentsNo() = _$_InvalidDependentsNo<T>;
+  const factory _InvalidDependentsNo({@required T invalidValue}) =
+      _$_InvalidDependentsNo<T>;
+
+  @override
+  T get invalidValue;
+  @override
+  @JsonKey(ignore: true)
+  _$InvalidDependentsNoCopyWith<T, _InvalidDependentsNo<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$IntergerNotPositiveCopyWith<T, $Res> {
+abstract class _$IntergerNotPositiveCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$IntergerNotPositiveCopyWith(_IntergerNotPositive<T> value,
           $Res Function(_IntergerNotPositive<T>) then) =
       __$IntergerNotPositiveCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T invalidValue});
 }
 
 /// @nodoc
@@ -3336,17 +2867,31 @@ class __$IntergerNotPositiveCopyWithImpl<T, $Res>
 
   @override
   _IntergerNotPositive<T> get _value => super._value as _IntergerNotPositive<T>;
+
+  @override
+  $Res call({
+    Object invalidValue = freezed,
+  }) {
+    return _then(_IntergerNotPositive<T>(
+      invalidValue:
+          invalidValue == freezed ? _value.invalidValue : invalidValue as T,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_IntergerNotPositive<T>
     with DiagnosticableTreeMixin
     implements _IntergerNotPositive<T> {
-  const _$_IntergerNotPositive();
+  const _$_IntergerNotPositive({@required this.invalidValue})
+      : assert(invalidValue != null);
+
+  @override
+  final T invalidValue;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoanValueFailures<$T>.integerNotPositive()';
+    return 'LoanValueFailures<$T>.integerNotPositive(invalidValue: $invalidValue)';
   }
 
   @override
@@ -3354,16 +2899,28 @@ class _$_IntergerNotPositive<T>
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'LoanValueFailures<$T>.integerNotPositive'));
+          'type', 'LoanValueFailures<$T>.integerNotPositive'))
+      ..add(DiagnosticsProperty('invalidValue', invalidValue));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _IntergerNotPositive<T>);
+    return identical(this, other) ||
+        (other is _IntergerNotPositive<T> &&
+            (identical(other.invalidValue, invalidValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.invalidValue, invalidValue)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(invalidValue);
+
+  @JsonKey(ignore: true)
+  @override
+  _$IntergerNotPositiveCopyWith<T, _IntergerNotPositive<T>> get copyWith =>
+      __$IntergerNotPositiveCopyWithImpl<T, _IntergerNotPositive<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3374,12 +2931,10 @@ class _$_IntergerNotPositive<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -3389,15 +2944,13 @@ class _$_IntergerNotPositive<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
     assert(integerNotPositive != null);
     assert(invalidIntegerValue != null);
     assert(invalidCreditHistory != null);
-    return integerNotPositive();
+    return integerNotPositive(invalidValue);
   }
 
   @override
@@ -3409,19 +2962,17 @@ class _$_IntergerNotPositive<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (integerNotPositive != null) {
-      return integerNotPositive();
+      return integerNotPositive(invalidValue);
     }
     return orElse();
   }
@@ -3436,9 +2987,6 @@ class _$_IntergerNotPositive<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3452,8 +3000,6 @@ class _$_IntergerNotPositive<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -3472,8 +3018,6 @@ class _$_IntergerNotPositive<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3491,14 +3035,23 @@ class _$_IntergerNotPositive<T>
 }
 
 abstract class _IntergerNotPositive<T> implements LoanValueFailures<T> {
-  const factory _IntergerNotPositive() = _$_IntergerNotPositive<T>;
+  const factory _IntergerNotPositive({@required T invalidValue}) =
+      _$_IntergerNotPositive<T>;
+
+  @override
+  T get invalidValue;
+  @override
+  @JsonKey(ignore: true)
+  _$IntergerNotPositiveCopyWith<T, _IntergerNotPositive<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$InvalidIntegerValueCopyWith<T, $Res> {
+abstract class _$InvalidIntegerValueCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidIntegerValueCopyWith(_InvalidIntegerValue<T> value,
           $Res Function(_InvalidIntegerValue<T>) then) =
       __$InvalidIntegerValueCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -3576,12 +3129,10 @@ class _$_InvalidIntegerValue<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -3591,8 +3142,6 @@ class _$_InvalidIntegerValue<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -3611,12 +3160,10 @@ class _$_InvalidIntegerValue<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -3638,9 +3185,6 @@ class _$_InvalidIntegerValue<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3654,8 +3198,6 @@ class _$_InvalidIntegerValue<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -3674,8 +3216,6 @@ class _$_InvalidIntegerValue<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3696,16 +3236,20 @@ abstract class _InvalidIntegerValue<T> implements LoanValueFailures<T> {
   const factory _InvalidIntegerValue({@required T invalidValue}) =
       _$_InvalidIntegerValue<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$InvalidIntegerValueCopyWith<T, _InvalidIntegerValue<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class _$InvalidCreditHistoryCopyWith<T, $Res> {
+abstract class _$InvalidCreditHistoryCopyWith<T, $Res>
+    implements $LoanValueFailuresCopyWith<T, $Res> {
   factory _$InvalidCreditHistoryCopyWith(_InvalidCreditHistory<T> value,
           $Res Function(_InvalidCreditHistory<T>) then) =
       __$InvalidCreditHistoryCopyWithImpl<T, $Res>;
+  @override
   $Res call({T invalidValue});
 }
 
@@ -3784,12 +3328,10 @@ class _$_InvalidCreditHistory<T>
     @required TResult invalidEducationStatus(T invalidValue),
     @required TResult invalidSelfEmployedStatus(T invalidValue),
     @required TResult invalidPropertyArea(T invalidValue),
-    @required TResult invalidApplicantIncome(T invalidValue),
-    @required TResult invalidCoApplicantIncome(T invalidValue),
     @required TResult invalidLoanAmount(T invalidValue),
     @required TResult invalidLoanTerm(T invalidValue),
-    @required TResult invalidDependentsNo(),
-    @required TResult integerNotPositive(),
+    @required TResult invalidDependentsNo(T invalidValue),
+    @required TResult integerNotPositive(T invalidValue),
     @required TResult invalidIntegerValue(T invalidValue),
     @required TResult invalidCreditHistory(T invalidValue),
   }) {
@@ -3799,8 +3341,6 @@ class _$_InvalidCreditHistory<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -3819,12 +3359,10 @@ class _$_InvalidCreditHistory<T>
     TResult invalidEducationStatus(T invalidValue),
     TResult invalidSelfEmployedStatus(T invalidValue),
     TResult invalidPropertyArea(T invalidValue),
-    TResult invalidApplicantIncome(T invalidValue),
-    TResult invalidCoApplicantIncome(T invalidValue),
     TResult invalidLoanAmount(T invalidValue),
     TResult invalidLoanTerm(T invalidValue),
-    TResult invalidDependentsNo(),
-    TResult integerNotPositive(),
+    TResult invalidDependentsNo(T invalidValue),
+    TResult integerNotPositive(T invalidValue),
     TResult invalidIntegerValue(T invalidValue),
     TResult invalidCreditHistory(T invalidValue),
     @required TResult orElse(),
@@ -3846,9 +3384,6 @@ class _$_InvalidCreditHistory<T>
     @required
         TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     @required TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    @required TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    @required
-        TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     @required TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     @required TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     @required TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3862,8 +3397,6 @@ class _$_InvalidCreditHistory<T>
     assert(invalidEducationStatus != null);
     assert(invalidSelfEmployedStatus != null);
     assert(invalidPropertyArea != null);
-    assert(invalidApplicantIncome != null);
-    assert(invalidCoApplicantIncome != null);
     assert(invalidLoanAmount != null);
     assert(invalidLoanTerm != null);
     assert(invalidDependentsNo != null);
@@ -3882,8 +3415,6 @@ class _$_InvalidCreditHistory<T>
     TResult invalidEducationStatus(_InvalidEducationStatus<T> value),
     TResult invalidSelfEmployedStatus(_InvalidSelfEmployedStatus<T> value),
     TResult invalidPropertyArea(_InvalidPropertyArea<T> value),
-    TResult invalidApplicantIncome(_InvalidApplicantIncome<T> value),
-    TResult invalidCoApplicantIncome(_InvalidCoApplicantIncome<T> value),
     TResult invalidLoanAmount(_InvalidLoanAmount<T> value),
     TResult invalidLoanTerm(_InvalidLoanTerm<T> value),
     TResult invalidDependentsNo(_InvalidDependentsNo<T> value),
@@ -3904,7 +3435,9 @@ abstract class _InvalidCreditHistory<T> implements LoanValueFailures<T> {
   const factory _InvalidCreditHistory({@required T invalidValue}) =
       _$_InvalidCreditHistory<T>;
 
+  @override
   T get invalidValue;
+  @override
   @JsonKey(ignore: true)
   _$InvalidCreditHistoryCopyWith<T, _InvalidCreditHistory<T>> get copyWith;
 }

@@ -12,13 +12,26 @@ class HomePage extends StatelessWidget {
     return BlocProvider(
       create: (context) => getIt<AuthBloc>(),
       child: Scaffold(
-          body: Center(
-        child: FlatButton(
-            onPressed: () {
-              context.read<AuthBloc>().add(const AuthEvent.signOut());
-              ExtendedNavigator.of(context).replace(Routes.signInPage);
-            },
-            child: const Text("LogOut")),
+          body: Column(
+        children: [
+          Center(
+            child: FlatButton(
+                color: Colors.greenAccent,
+                onPressed: () {
+                  ExtendedNavigator.of(context)
+                      .push(Routes.loanApplicationFormPage);
+                },
+                child: const Text("Save Loan Application Info ")),
+          ),
+          Center(
+            child: FlatButton(
+                onPressed: () {
+                  context.read<AuthBloc>().add(const AuthEvent.signOut());
+                  ExtendedNavigator.of(context).replace(Routes.signInPage);
+                },
+                child: const Text("LogOut")),
+          ),
+        ],
       )),
     );
   }

@@ -34,18 +34,15 @@ abstract class LoanValueFailures<T> with _$LoanValueFailures<T> {
       {@required T invalidValue}) = _InvalidSelfEmployedStatus<T>;
   const factory LoanValueFailures.invalidPropertyArea(
       {@required T invalidValue}) = _InvalidPropertyArea<T>;
-  const factory LoanValueFailures.invalidApplicantIncome(
-      {@required T invalidValue}) = _InvalidApplicantIncome<T>;
-  const factory LoanValueFailures.invalidCoApplicantIncome(
-      {@required T invalidValue}) = _InvalidCoApplicantIncome<T>;
+
   const factory LoanValueFailures.invalidLoanAmount(
       {@required T invalidValue}) = _InvalidLoanAmount<T>;
   const factory LoanValueFailures.invalidLoanTerm({@required T invalidValue}) =
       _InvalidLoanTerm<T>;
-  const factory LoanValueFailures.invalidDependentsNo() =
-      _InvalidDependentsNo<T>;
-  const factory LoanValueFailures.integerNotPositive() =
-      _IntergerNotPositive<T>;
+  const factory LoanValueFailures.invalidDependentsNo(
+      {@required T invalidValue}) = _InvalidDependentsNo<T>;
+  const factory LoanValueFailures.integerNotPositive(
+      {@required T invalidValue}) = _IntergerNotPositive<T>;
   const factory LoanValueFailures.invalidIntegerValue(
       {@required T invalidValue}) = _InvalidIntegerValue<T>;
   const factory LoanValueFailures.invalidCreditHistory(

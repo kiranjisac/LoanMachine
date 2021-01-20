@@ -48,7 +48,7 @@ Either<ValueFailure<String>, String> validatePasswordandEncrypt(
 
 Either<ValueFailure<String>, String> validateStringNotEmpty(
     {@required String input}) {
-  if (input.isNotEmpty) {
+  if (input.isNotEmpty && input != "") {
     return right(input);
   }
   return left(
@@ -60,17 +60,17 @@ Either<ValueFailure<double>, double> validateIntegerFromString(
   final value = double.tryParse(input);
   if (value == null) {
     return left(ValueFailure.loan(
-        LoanValueFailures.invalidIntegerValue(invalidValue: value)));
+        LoanValueFailures.invalidIntegerValue(invalidValue: input)));
   } else if (value <= 0) {
-    return left(
-        const ValueFailure.loan(LoanValueFailures.integerNotPositive()));
+    return left(ValueFailure.loan(
+        LoanValueFailures.integerNotPositive(invalidValue: input)));
   } else {
     return right(value);
   }
 }
 
 Either<ValueFailure<int>, int> validateLoanTerm({@required int input}) {
-  const loanTerms = [60, 120, 180, 240, 300, 360, 480];
+  const loanTerms = [60, 120, 180, 240, 300, 360, 420, 480, 540];
 
   if (loanTerms.contains(input)) {
     return right(input);

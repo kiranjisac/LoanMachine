@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'loan_application_bloc_bloc.dart';
+part of 'loan_application_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'loan_application_bloc_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$LoanApplicationBlocEventTearOff {
-  const _$LoanApplicationBlocEventTearOff();
+class _$LoanApplicationEventTearOff {
+  const _$LoanApplicationEventTearOff();
 
 // ignore: unused_element
   _GenderChanged genderChanged(String rawGender) {
@@ -108,10 +108,10 @@ class _$LoanApplicationBlocEventTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $LoanApplicationBlocEvent = _$LoanApplicationBlocEventTearOff();
+const $LoanApplicationEvent = _$LoanApplicationEventTearOff();
 
 /// @nodoc
-mixin _$LoanApplicationBlocEvent {
+mixin _$LoanApplicationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult genderChanged(String rawGender),
@@ -183,20 +183,20 @@ mixin _$LoanApplicationBlocEvent {
 }
 
 /// @nodoc
-abstract class $LoanApplicationBlocEventCopyWith<$Res> {
-  factory $LoanApplicationBlocEventCopyWith(LoanApplicationBlocEvent value,
-          $Res Function(LoanApplicationBlocEvent) then) =
-      _$LoanApplicationBlocEventCopyWithImpl<$Res>;
+abstract class $LoanApplicationEventCopyWith<$Res> {
+  factory $LoanApplicationEventCopyWith(LoanApplicationEvent value,
+          $Res Function(LoanApplicationEvent) then) =
+      _$LoanApplicationEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoanApplicationBlocEventCopyWithImpl<$Res>
-    implements $LoanApplicationBlocEventCopyWith<$Res> {
-  _$LoanApplicationBlocEventCopyWithImpl(this._value, this._then);
+class _$LoanApplicationEventCopyWithImpl<$Res>
+    implements $LoanApplicationEventCopyWith<$Res> {
+  _$LoanApplicationEventCopyWithImpl(this._value, this._then);
 
-  final LoanApplicationBlocEvent _value;
+  final LoanApplicationEvent _value;
   // ignore: unused_field
-  final $Res Function(LoanApplicationBlocEvent) _then;
+  final $Res Function(LoanApplicationEvent) _then;
 }
 
 /// @nodoc
@@ -209,7 +209,7 @@ abstract class _$GenderChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$GenderChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$GenderChangedCopyWith<$Res> {
   __$GenderChangedCopyWithImpl(
       _GenderChanged _value, $Res Function(_GenderChanged) _then)
@@ -237,7 +237,7 @@ class _$_GenderChanged implements _GenderChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.genderChanged(rawGender: $rawGender)';
+    return 'LoanApplicationEvent.genderChanged(rawGender: $rawGender)';
   }
 
   @override
@@ -377,7 +377,7 @@ class _$_GenderChanged implements _GenderChanged {
   }
 }
 
-abstract class _GenderChanged implements LoanApplicationBlocEvent {
+abstract class _GenderChanged implements LoanApplicationEvent {
   const factory _GenderChanged(String rawGender) = _$_GenderChanged;
 
   String get rawGender;
@@ -396,7 +396,7 @@ abstract class _$LoanApplicationNameChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$LoanApplicationNameChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$LoanApplicationNameChangedCopyWith<$Res> {
   __$LoanApplicationNameChangedCopyWithImpl(_LoanApplicationNameChanged _value,
       $Res Function(_LoanApplicationNameChanged) _then)
@@ -428,7 +428,7 @@ class _$_LoanApplicationNameChanged implements _LoanApplicationNameChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.loanApplicationNameChanged(rawLoanApplicationName: $rawLoanApplicationName)';
+    return 'LoanApplicationEvent.loanApplicationNameChanged(rawLoanApplicationName: $rawLoanApplicationName)';
   }
 
   @override
@@ -570,7 +570,7 @@ class _$_LoanApplicationNameChanged implements _LoanApplicationNameChanged {
   }
 }
 
-abstract class _LoanApplicationNameChanged implements LoanApplicationBlocEvent {
+abstract class _LoanApplicationNameChanged implements LoanApplicationEvent {
   const factory _LoanApplicationNameChanged(String rawLoanApplicationName) =
       _$_LoanApplicationNameChanged;
 
@@ -590,7 +590,7 @@ abstract class _$MarriedStatusChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$MarriedStatusChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$MarriedStatusChangedCopyWith<$Res> {
   __$MarriedStatusChangedCopyWithImpl(
       _MarriedStatusChanged _value, $Res Function(_MarriedStatusChanged) _then)
@@ -621,7 +621,7 @@ class _$_MarriedStatusChanged implements _MarriedStatusChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.marriedStatusChanged(rawMarriedStatus: $rawMarriedStatus)';
+    return 'LoanApplicationEvent.marriedStatusChanged(rawMarriedStatus: $rawMarriedStatus)';
   }
 
   @override
@@ -763,7 +763,7 @@ class _$_MarriedStatusChanged implements _MarriedStatusChanged {
   }
 }
 
-abstract class _MarriedStatusChanged implements LoanApplicationBlocEvent {
+abstract class _MarriedStatusChanged implements LoanApplicationEvent {
   const factory _MarriedStatusChanged(String rawMarriedStatus) =
       _$_MarriedStatusChanged;
 
@@ -782,7 +782,7 @@ abstract class _$EducationStatusChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$EducationStatusChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$EducationStatusChangedCopyWith<$Res> {
   __$EducationStatusChangedCopyWithImpl(_EducationStatusChanged _value,
       $Res Function(_EducationStatusChanged) _then)
@@ -813,7 +813,7 @@ class _$_EducationStatusChanged implements _EducationStatusChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.educationStatusChanged(rawEducationStatus: $rawEducationStatus)';
+    return 'LoanApplicationEvent.educationStatusChanged(rawEducationStatus: $rawEducationStatus)';
   }
 
   @override
@@ -955,7 +955,7 @@ class _$_EducationStatusChanged implements _EducationStatusChanged {
   }
 }
 
-abstract class _EducationStatusChanged implements LoanApplicationBlocEvent {
+abstract class _EducationStatusChanged implements LoanApplicationEvent {
   const factory _EducationStatusChanged(String rawEducationStatus) =
       _$_EducationStatusChanged;
 
@@ -974,7 +974,7 @@ abstract class _$DependentsChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$DependentsChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$DependentsChangedCopyWith<$Res> {
   __$DependentsChangedCopyWithImpl(
       _DependentsChanged _value, $Res Function(_DependentsChanged) _then)
@@ -1005,7 +1005,7 @@ class _$_DependentsChanged implements _DependentsChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.dependentsChanged(rawDependentsValue: $rawDependentsValue)';
+    return 'LoanApplicationEvent.dependentsChanged(rawDependentsValue: $rawDependentsValue)';
   }
 
   @override
@@ -1146,7 +1146,7 @@ class _$_DependentsChanged implements _DependentsChanged {
   }
 }
 
-abstract class _DependentsChanged implements LoanApplicationBlocEvent {
+abstract class _DependentsChanged implements LoanApplicationEvent {
   const factory _DependentsChanged(int rawDependentsValue) =
       _$_DependentsChanged;
 
@@ -1165,7 +1165,7 @@ abstract class _$LoanAmountChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$LoanAmountChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$LoanAmountChangedCopyWith<$Res> {
   __$LoanAmountChangedCopyWithImpl(
       _LoanAmountChanged _value, $Res Function(_LoanAmountChanged) _then)
@@ -1194,7 +1194,7 @@ class _$_LoanAmountChanged implements _LoanAmountChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.loanAmountChanged(rawLoanAmount: $rawLoanAmount)';
+    return 'LoanApplicationEvent.loanAmountChanged(rawLoanAmount: $rawLoanAmount)';
   }
 
   @override
@@ -1334,7 +1334,7 @@ class _$_LoanAmountChanged implements _LoanAmountChanged {
   }
 }
 
-abstract class _LoanAmountChanged implements LoanApplicationBlocEvent {
+abstract class _LoanAmountChanged implements LoanApplicationEvent {
   const factory _LoanAmountChanged(String rawLoanAmount) = _$_LoanAmountChanged;
 
   String get rawLoanAmount;
@@ -1352,7 +1352,7 @@ abstract class _$SelfEmployedStatusChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$SelfEmployedStatusChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$SelfEmployedStatusChangedCopyWith<$Res> {
   __$SelfEmployedStatusChangedCopyWithImpl(_SelfEmployedStatusChanged _value,
       $Res Function(_SelfEmployedStatusChanged) _then)
@@ -1384,7 +1384,7 @@ class _$_SelfEmployedStatusChanged implements _SelfEmployedStatusChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.selfEmployedStatusChanged(rawSelfEmployedStatus: $rawSelfEmployedStatus)';
+    return 'LoanApplicationEvent.selfEmployedStatusChanged(rawSelfEmployedStatus: $rawSelfEmployedStatus)';
   }
 
   @override
@@ -1527,7 +1527,7 @@ class _$_SelfEmployedStatusChanged implements _SelfEmployedStatusChanged {
   }
 }
 
-abstract class _SelfEmployedStatusChanged implements LoanApplicationBlocEvent {
+abstract class _SelfEmployedStatusChanged implements LoanApplicationEvent {
   const factory _SelfEmployedStatusChanged(String rawSelfEmployedStatus) =
       _$_SelfEmployedStatusChanged;
 
@@ -1546,7 +1546,7 @@ abstract class _$ApplicantIncomeChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$ApplicantIncomeChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$ApplicantIncomeChangedCopyWith<$Res> {
   __$ApplicantIncomeChangedCopyWithImpl(_ApplicantIncomeChanged _value,
       $Res Function(_ApplicantIncomeChanged) _then)
@@ -1577,7 +1577,7 @@ class _$_ApplicantIncomeChanged implements _ApplicantIncomeChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.applicantIncomeChanged(rawApplicantIncome: $rawApplicantIncome)';
+    return 'LoanApplicationEvent.applicantIncomeChanged(rawApplicantIncome: $rawApplicantIncome)';
   }
 
   @override
@@ -1719,7 +1719,7 @@ class _$_ApplicantIncomeChanged implements _ApplicantIncomeChanged {
   }
 }
 
-abstract class _ApplicantIncomeChanged implements LoanApplicationBlocEvent {
+abstract class _ApplicantIncomeChanged implements LoanApplicationEvent {
   const factory _ApplicantIncomeChanged(String rawApplicantIncome) =
       _$_ApplicantIncomeChanged;
 
@@ -1738,7 +1738,7 @@ abstract class _$CoApplicantIncomeChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$CoApplicantIncomeChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$CoApplicantIncomeChangedCopyWith<$Res> {
   __$CoApplicantIncomeChangedCopyWithImpl(_CoApplicantIncomeChanged _value,
       $Res Function(_CoApplicantIncomeChanged) _then)
@@ -1770,7 +1770,7 @@ class _$_CoApplicantIncomeChanged implements _CoApplicantIncomeChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.coApplicantIncomeChanged(rawCoApplicantIncome: $rawCoApplicantIncome)';
+    return 'LoanApplicationEvent.coApplicantIncomeChanged(rawCoApplicantIncome: $rawCoApplicantIncome)';
   }
 
   @override
@@ -1912,7 +1912,7 @@ class _$_CoApplicantIncomeChanged implements _CoApplicantIncomeChanged {
   }
 }
 
-abstract class _CoApplicantIncomeChanged implements LoanApplicationBlocEvent {
+abstract class _CoApplicantIncomeChanged implements LoanApplicationEvent {
   const factory _CoApplicantIncomeChanged(String rawCoApplicantIncome) =
       _$_CoApplicantIncomeChanged;
 
@@ -1931,7 +1931,7 @@ abstract class _$LoanTerChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$LoanTerChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$LoanTerChangedCopyWith<$Res> {
   __$LoanTerChangedCopyWithImpl(
       _LoanTerChanged _value, $Res Function(_LoanTerChanged) _then)
@@ -1959,7 +1959,7 @@ class _$_LoanTerChanged implements _LoanTerChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.loanTermChanged(rawLoanTerm: $rawLoanTerm)';
+    return 'LoanApplicationEvent.loanTermChanged(rawLoanTerm: $rawLoanTerm)';
   }
 
   @override
@@ -2099,7 +2099,7 @@ class _$_LoanTerChanged implements _LoanTerChanged {
   }
 }
 
-abstract class _LoanTerChanged implements LoanApplicationBlocEvent {
+abstract class _LoanTerChanged implements LoanApplicationEvent {
   const factory _LoanTerChanged(int rawLoanTerm) = _$_LoanTerChanged;
 
   int get rawLoanTerm;
@@ -2117,7 +2117,7 @@ abstract class _$CreditHistorychangedCopyWith<$Res> {
 
 /// @nodoc
 class __$CreditHistorychangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$CreditHistorychangedCopyWith<$Res> {
   __$CreditHistorychangedCopyWithImpl(
       _CreditHistorychanged _value, $Res Function(_CreditHistorychanged) _then)
@@ -2148,7 +2148,7 @@ class _$_CreditHistorychanged implements _CreditHistorychanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.creditHistoryChanged(rawCreditHistory: $rawCreditHistory)';
+    return 'LoanApplicationEvent.creditHistoryChanged(rawCreditHistory: $rawCreditHistory)';
   }
 
   @override
@@ -2290,7 +2290,7 @@ class _$_CreditHistorychanged implements _CreditHistorychanged {
   }
 }
 
-abstract class _CreditHistorychanged implements LoanApplicationBlocEvent {
+abstract class _CreditHistorychanged implements LoanApplicationEvent {
   const factory _CreditHistorychanged(String rawCreditHistory) =
       _$_CreditHistorychanged;
 
@@ -2309,7 +2309,7 @@ abstract class _$PropertyAreaChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$PropertyAreaChangedCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$PropertyAreaChangedCopyWith<$Res> {
   __$PropertyAreaChangedCopyWithImpl(
       _PropertyAreaChanged _value, $Res Function(_PropertyAreaChanged) _then)
@@ -2340,7 +2340,7 @@ class _$_PropertyAreaChanged implements _PropertyAreaChanged {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.propertyAreaChanged(rawPropertyArea: $rawPropertyArea)';
+    return 'LoanApplicationEvent.propertyAreaChanged(rawPropertyArea: $rawPropertyArea)';
   }
 
   @override
@@ -2482,7 +2482,7 @@ class _$_PropertyAreaChanged implements _PropertyAreaChanged {
   }
 }
 
-abstract class _PropertyAreaChanged implements LoanApplicationBlocEvent {
+abstract class _PropertyAreaChanged implements LoanApplicationEvent {
   const factory _PropertyAreaChanged(String rawPropertyArea) =
       _$_PropertyAreaChanged;
 
@@ -2499,7 +2499,7 @@ abstract class _$SaveDataCopyWith<$Res> {
 
 /// @nodoc
 class __$SaveDataCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocEventCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
     implements _$SaveDataCopyWith<$Res> {
   __$SaveDataCopyWithImpl(_SaveData _value, $Res Function(_SaveData) _then)
       : super(_value, (v) => _then(v as _SaveData));
@@ -2514,7 +2514,7 @@ class _$_SaveData implements _SaveData {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocEvent.saveData()';
+    return 'LoanApplicationEvent.saveData()';
   }
 
   @override
@@ -2644,16 +2644,16 @@ class _$_SaveData implements _SaveData {
   }
 }
 
-abstract class _SaveData implements LoanApplicationBlocEvent {
+abstract class _SaveData implements LoanApplicationEvent {
   const factory _SaveData() = _$_SaveData;
 }
 
 /// @nodoc
-class _$LoanApplicationBlocStateTearOff {
-  const _$LoanApplicationBlocStateTearOff();
+class _$LoanApplicationStateTearOff {
+  const _$LoanApplicationStateTearOff();
 
 // ignore: unused_element
-  _LoanApplicationBlocState call(
+  _LoanApplicationState call(
       {@required
           bool showErrorMessages,
       @required
@@ -2687,7 +2687,7 @@ class _$LoanApplicationBlocStateTearOff {
       @required
           Option<Either<LoanApplicationFailure, Unit>>
               loanFailureOrSuccessOption}) {
-    return _LoanApplicationBlocState(
+    return _LoanApplicationState(
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       applicationUniqueId: applicationUniqueId,
@@ -2710,10 +2710,10 @@ class _$LoanApplicationBlocStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $LoanApplicationBlocState = _$LoanApplicationBlocStateTearOff();
+const $LoanApplicationState = _$LoanApplicationStateTearOff();
 
 /// @nodoc
-mixin _$LoanApplicationBlocState {
+mixin _$LoanApplicationState {
   bool get showErrorMessages;
   bool get isSubmitting;
   UniqueId get applicationUniqueId;
@@ -2732,14 +2732,14 @@ mixin _$LoanApplicationBlocState {
   Option<Either<LoanApplicationFailure, Unit>> get loanFailureOrSuccessOption;
 
   @JsonKey(ignore: true)
-  $LoanApplicationBlocStateCopyWith<LoanApplicationBlocState> get copyWith;
+  $LoanApplicationStateCopyWith<LoanApplicationState> get copyWith;
 }
 
 /// @nodoc
-abstract class $LoanApplicationBlocStateCopyWith<$Res> {
-  factory $LoanApplicationBlocStateCopyWith(LoanApplicationBlocState value,
-          $Res Function(LoanApplicationBlocState) then) =
-      _$LoanApplicationBlocStateCopyWithImpl<$Res>;
+abstract class $LoanApplicationStateCopyWith<$Res> {
+  factory $LoanApplicationStateCopyWith(LoanApplicationState value,
+          $Res Function(LoanApplicationState) then) =
+      _$LoanApplicationStateCopyWithImpl<$Res>;
   $Res call(
       {bool showErrorMessages,
       bool isSubmitting,
@@ -2760,13 +2760,13 @@ abstract class $LoanApplicationBlocStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoanApplicationBlocStateCopyWithImpl<$Res>
-    implements $LoanApplicationBlocStateCopyWith<$Res> {
-  _$LoanApplicationBlocStateCopyWithImpl(this._value, this._then);
+class _$LoanApplicationStateCopyWithImpl<$Res>
+    implements $LoanApplicationStateCopyWith<$Res> {
+  _$LoanApplicationStateCopyWithImpl(this._value, this._then);
 
-  final LoanApplicationBlocState _value;
+  final LoanApplicationState _value;
   // ignore: unused_field
-  final $Res Function(LoanApplicationBlocState) _then;
+  final $Res Function(LoanApplicationState) _then;
 
   @override
   $Res call({
@@ -2832,11 +2832,11 @@ class _$LoanApplicationBlocStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LoanApplicationBlocStateCopyWith<$Res>
-    implements $LoanApplicationBlocStateCopyWith<$Res> {
-  factory _$LoanApplicationBlocStateCopyWith(_LoanApplicationBlocState value,
-          $Res Function(_LoanApplicationBlocState) then) =
-      __$LoanApplicationBlocStateCopyWithImpl<$Res>;
+abstract class _$LoanApplicationStateCopyWith<$Res>
+    implements $LoanApplicationStateCopyWith<$Res> {
+  factory _$LoanApplicationStateCopyWith(_LoanApplicationState value,
+          $Res Function(_LoanApplicationState) then) =
+      __$LoanApplicationStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool showErrorMessages,
@@ -2858,16 +2858,15 @@ abstract class _$LoanApplicationBlocStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LoanApplicationBlocStateCopyWithImpl<$Res>
-    extends _$LoanApplicationBlocStateCopyWithImpl<$Res>
-    implements _$LoanApplicationBlocStateCopyWith<$Res> {
-  __$LoanApplicationBlocStateCopyWithImpl(_LoanApplicationBlocState _value,
-      $Res Function(_LoanApplicationBlocState) _then)
-      : super(_value, (v) => _then(v as _LoanApplicationBlocState));
+class __$LoanApplicationStateCopyWithImpl<$Res>
+    extends _$LoanApplicationStateCopyWithImpl<$Res>
+    implements _$LoanApplicationStateCopyWith<$Res> {
+  __$LoanApplicationStateCopyWithImpl(
+      _LoanApplicationState _value, $Res Function(_LoanApplicationState) _then)
+      : super(_value, (v) => _then(v as _LoanApplicationState));
 
   @override
-  _LoanApplicationBlocState get _value =>
-      super._value as _LoanApplicationBlocState;
+  _LoanApplicationState get _value => super._value as _LoanApplicationState;
 
   @override
   $Res call({
@@ -2888,7 +2887,7 @@ class __$LoanApplicationBlocStateCopyWithImpl<$Res>
     Object propertyArea = freezed,
     Object loanFailureOrSuccessOption = freezed,
   }) {
-    return _then(_LoanApplicationBlocState(
+    return _then(_LoanApplicationState(
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -2933,8 +2932,8 @@ class __$LoanApplicationBlocStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_LoanApplicationBlocState implements _LoanApplicationBlocState {
-  const _$_LoanApplicationBlocState(
+class _$_LoanApplicationState implements _LoanApplicationState {
+  const _$_LoanApplicationState(
       {@required this.showErrorMessages,
       @required this.isSubmitting,
       @required this.applicationUniqueId,
@@ -3003,13 +3002,13 @@ class _$_LoanApplicationBlocState implements _LoanApplicationBlocState {
 
   @override
   String toString() {
-    return 'LoanApplicationBlocState(showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, applicationUniqueId: $applicationUniqueId, loanApplicationName: $loanApplicationName, gender: $gender, married: $married, education: $education, selfEmployed: $selfEmployed, dependents: $dependents, applicantIncome: $applicantIncome, coApplicantIncome: $coApplicantIncome, loanAmount: $loanAmount, loanTerm: $loanTerm, creditHistory: $creditHistory, propertyArea: $propertyArea, loanFailureOrSuccessOption: $loanFailureOrSuccessOption)';
+    return 'LoanApplicationState(showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, applicationUniqueId: $applicationUniqueId, loanApplicationName: $loanApplicationName, gender: $gender, married: $married, education: $education, selfEmployed: $selfEmployed, dependents: $dependents, applicantIncome: $applicantIncome, coApplicantIncome: $coApplicantIncome, loanAmount: $loanAmount, loanTerm: $loanTerm, creditHistory: $creditHistory, propertyArea: $propertyArea, loanFailureOrSuccessOption: $loanFailureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoanApplicationBlocState &&
+        (other is _LoanApplicationState &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -3083,13 +3082,13 @@ class _$_LoanApplicationBlocState implements _LoanApplicationBlocState {
 
   @JsonKey(ignore: true)
   @override
-  _$LoanApplicationBlocStateCopyWith<_LoanApplicationBlocState> get copyWith =>
-      __$LoanApplicationBlocStateCopyWithImpl<_LoanApplicationBlocState>(
+  _$LoanApplicationStateCopyWith<_LoanApplicationState> get copyWith =>
+      __$LoanApplicationStateCopyWithImpl<_LoanApplicationState>(
           this, _$identity);
 }
 
-abstract class _LoanApplicationBlocState implements LoanApplicationBlocState {
-  const factory _LoanApplicationBlocState(
+abstract class _LoanApplicationState implements LoanApplicationState {
+  const factory _LoanApplicationState(
       {@required
           bool showErrorMessages,
       @required
@@ -3122,7 +3121,7 @@ abstract class _LoanApplicationBlocState implements LoanApplicationBlocState {
           PropertyArea propertyArea,
       @required
           Option<Either<LoanApplicationFailure, Unit>>
-              loanFailureOrSuccessOption}) = _$_LoanApplicationBlocState;
+              loanFailureOrSuccessOption}) = _$_LoanApplicationState;
 
   @override
   bool get showErrorMessages;
@@ -3158,5 +3157,5 @@ abstract class _LoanApplicationBlocState implements LoanApplicationBlocState {
   Option<Either<LoanApplicationFailure, Unit>> get loanFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
-  _$LoanApplicationBlocStateCopyWith<_LoanApplicationBlocState> get copyWith;
+  _$LoanApplicationStateCopyWith<_LoanApplicationState> get copyWith;
 }
