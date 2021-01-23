@@ -8,6 +8,8 @@ abstract class SignInFormState with _$SignInFormState {
           @required
               Password password,
           @required
+              Password confirmPassword,
+          @required
               UserName userName,
           @required
               bool showErrorMessages,
@@ -22,6 +24,7 @@ abstract class SignInFormState with _$SignInFormState {
   factory SignInFormState.initial() => SignInFormState(
       emailAddress: EmailAddress(""),
       password: Password(""),
+      confirmPassword: Password(""),
       userName: UserName(""),
       showErrorMessages: false,
       obscureTextValue: true,

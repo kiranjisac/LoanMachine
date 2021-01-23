@@ -8,6 +8,8 @@ abstract class SignInFormEvent with _$SignInFormEvent {
       _EmailAddressChanged;
   const factory SignInFormEvent.passwordChanged(String rawPassword) =
       _PasswordChanged;
+  const factory SignInFormEvent.confirmPasswordChanged(
+      String rawConfirmPassword) = _ConfirmPasswordChanged;
   const factory SignInFormEvent.registerWithWithEmailandPassword() =
       _RegisterWithWithEmailandPassword;
   const factory SignInFormEvent.signInWithWithEmailandPassword() =

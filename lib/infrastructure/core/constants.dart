@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Constants {
   const Constants();
@@ -30,5 +31,10 @@ class Constants {
 }
 
 class TextStyles {
-  static const textStyleNormalBlack = TextStyle(color: Colors.black);
+  static final textStyleNormalBlack = GoogleFonts.lato(color: Colors.black);
+}
+
+abstract class ConstantColors {
+  static final primaryColor = Colors.blue[800];
+  static final secondaryColor = Colors.grey;
 }

@@ -14,6 +14,7 @@ import 'infrastructure/auth/auth_local_database_helper.dart';
 import 'domain/auth/i_auth_facade.dart';
 import 'domain/loan/i_loan_application_repository.dart';
 import 'application/loan/loan_application_form_bloc/loan_application_bloc.dart';
+import 'application/loan/loan_application_watcher_bloc/loan_application_watcher_bloc.dart';
 import 'infrastructure/loan/loan_local_database_helper.dart';
 import 'infrastructure/auth/local_database_auth_facade.dart';
 import 'infrastructure/database/local_database_helper.dart';
@@ -46,6 +47,8 @@ Future<GetIt> $initGetIt(
           get<LocalDatabaseHelper>(instanceName: 'LoanLocalDatabaseHelper')));
   gh.factory<LoanApplicationBloc>(() => LoanApplicationBloc(
       get<ILoanApplicationRepository>(), get<IAuthFacade>()));
+  gh.factory<LoanApplicationWatcherBloc>(
+      () => LoanApplicationWatcherBloc(get<ILoanApplicationRepository>()));
   gh.lazySingleton<LocalDatabaseHelper>(
       () => LoanLocalDatabaseHelper(get<Database>(), get<SharedPreferences>()),
       instanceName: 'LoanLocalDatabaseHelper');

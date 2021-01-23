@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:loan_machine/domain/auth/i_auth_facade.dart';
+import 'package:loan_machine/domain/auth/user.dart';
 
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
@@ -22,7 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     yield* event.map(authCheckRequested: (e) async* {
       final signedInUser = await iAuthFacade.getSignedInUser();
       yield signedInUser.fold(() => const AuthState.unauthenticated(),
-          (_) => const AuthState.authenticated());
+          (user) => AuthState.authenticated(user));
     }, signOut: (e) async* {
       await iAuthFacade.signOut();
       yield const AuthState.unauthenticated();

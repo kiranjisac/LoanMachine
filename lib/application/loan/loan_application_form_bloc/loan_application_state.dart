@@ -29,14 +29,14 @@ abstract class LoanApplicationState with _$LoanApplicationState {
       loanApplicationName: LoanApplicationName(""),
       gender: Gender("Male"),
       married: Married("No"),
-      education: Education("Graduate"),
+      education: Education(""),
       selfEmployed: SelfEmployed("No"),
-      dependents: Dependents(0),
+      dependents: Dependents(-1),
       applicantIncome: ApplicantIncome(""),
       coApplicantIncome: CoApplicantIncome(""),
       loanAmount: LoanAmount(""),
-      loanTerm: LoanTerm(360),
+      loanTerm: LoanTerm(0),
       creditHistory: CreditHistory("Yes"),
-      propertyArea: PropertyArea("Urban"),
+      propertyArea: PropertyArea(""),
       loanFailureOrSuccessOption: none());
 }

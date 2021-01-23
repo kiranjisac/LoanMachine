@@ -35,6 +35,13 @@ class _$SignInFormEventTearOff {
   }
 
 // ignore: unused_element
+  _ConfirmPasswordChanged confirmPasswordChanged(String rawConfirmPassword) {
+    return _ConfirmPasswordChanged(
+      rawConfirmPassword,
+    );
+  }
+
+// ignore: unused_element
   _RegisterWithWithEmailandPassword registerWithWithEmailandPassword() {
     return const _RegisterWithWithEmailandPassword();
   }
@@ -71,6 +78,7 @@ mixin _$SignInFormEvent {
     @required TResult userNameChanged(String rawUserName),
     @required TResult emailAddressChanged(String rawEmailAddress),
     @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
     @required TResult registerWithWithEmailandPassword(),
     @required TResult signInWithWithEmailandPassword(),
     @required TResult resetForgottenPassword(),
@@ -82,6 +90,7 @@ mixin _$SignInFormEvent {
     TResult userNameChanged(String rawUserName),
     TResult emailAddressChanged(String rawEmailAddress),
     TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
     TResult registerWithWithEmailandPassword(),
     TResult signInWithWithEmailandPassword(),
     TResult resetForgottenPassword(),
@@ -94,6 +103,7 @@ mixin _$SignInFormEvent {
     @required TResult userNameChanged(_UserNameChanged value),
     @required TResult emailAddressChanged(_EmailAddressChanged value),
     @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     @required
         TResult registerWithWithEmailandPassword(
             _RegisterWithWithEmailandPassword value),
@@ -109,6 +119,7 @@ mixin _$SignInFormEvent {
     TResult userNameChanged(_UserNameChanged value),
     TResult emailAddressChanged(_EmailAddressChanged value),
     TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     TResult registerWithWithEmailandPassword(
         _RegisterWithWithEmailandPassword value),
     TResult signInWithWithEmailandPassword(
@@ -212,6 +223,7 @@ class _$_UserNameChanged
     @required TResult userNameChanged(String rawUserName),
     @required TResult emailAddressChanged(String rawEmailAddress),
     @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
     @required TResult registerWithWithEmailandPassword(),
     @required TResult signInWithWithEmailandPassword(),
     @required TResult resetForgottenPassword(),
@@ -221,6 +233,7 @@ class _$_UserNameChanged
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -235,6 +248,7 @@ class _$_UserNameChanged
     TResult userNameChanged(String rawUserName),
     TResult emailAddressChanged(String rawEmailAddress),
     TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
     TResult registerWithWithEmailandPassword(),
     TResult signInWithWithEmailandPassword(),
     TResult resetForgottenPassword(),
@@ -255,6 +269,7 @@ class _$_UserNameChanged
     @required TResult userNameChanged(_UserNameChanged value),
     @required TResult emailAddressChanged(_EmailAddressChanged value),
     @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     @required
         TResult registerWithWithEmailandPassword(
             _RegisterWithWithEmailandPassword value),
@@ -268,6 +283,7 @@ class _$_UserNameChanged
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -282,6 +298,7 @@ class _$_UserNameChanged
     TResult userNameChanged(_UserNameChanged value),
     TResult emailAddressChanged(_EmailAddressChanged value),
     TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     TResult registerWithWithEmailandPassword(
         _RegisterWithWithEmailandPassword value),
     TResult signInWithWithEmailandPassword(
@@ -387,6 +404,7 @@ class _$_EmailAddressChanged
     @required TResult userNameChanged(String rawUserName),
     @required TResult emailAddressChanged(String rawEmailAddress),
     @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
     @required TResult registerWithWithEmailandPassword(),
     @required TResult signInWithWithEmailandPassword(),
     @required TResult resetForgottenPassword(),
@@ -396,6 +414,7 @@ class _$_EmailAddressChanged
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -410,6 +429,7 @@ class _$_EmailAddressChanged
     TResult userNameChanged(String rawUserName),
     TResult emailAddressChanged(String rawEmailAddress),
     TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
     TResult registerWithWithEmailandPassword(),
     TResult signInWithWithEmailandPassword(),
     TResult resetForgottenPassword(),
@@ -430,6 +450,7 @@ class _$_EmailAddressChanged
     @required TResult userNameChanged(_UserNameChanged value),
     @required TResult emailAddressChanged(_EmailAddressChanged value),
     @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     @required
         TResult registerWithWithEmailandPassword(
             _RegisterWithWithEmailandPassword value),
@@ -443,6 +464,7 @@ class _$_EmailAddressChanged
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -457,6 +479,7 @@ class _$_EmailAddressChanged
     TResult userNameChanged(_UserNameChanged value),
     TResult emailAddressChanged(_EmailAddressChanged value),
     TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     TResult registerWithWithEmailandPassword(
         _RegisterWithWithEmailandPassword value),
     TResult signInWithWithEmailandPassword(
@@ -558,6 +581,7 @@ class _$_PasswordChanged
     @required TResult userNameChanged(String rawUserName),
     @required TResult emailAddressChanged(String rawEmailAddress),
     @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
     @required TResult registerWithWithEmailandPassword(),
     @required TResult signInWithWithEmailandPassword(),
     @required TResult resetForgottenPassword(),
@@ -567,6 +591,7 @@ class _$_PasswordChanged
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -581,6 +606,7 @@ class _$_PasswordChanged
     TResult userNameChanged(String rawUserName),
     TResult emailAddressChanged(String rawEmailAddress),
     TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
     TResult registerWithWithEmailandPassword(),
     TResult signInWithWithEmailandPassword(),
     TResult resetForgottenPassword(),
@@ -601,6 +627,7 @@ class _$_PasswordChanged
     @required TResult userNameChanged(_UserNameChanged value),
     @required TResult emailAddressChanged(_EmailAddressChanged value),
     @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     @required
         TResult registerWithWithEmailandPassword(
             _RegisterWithWithEmailandPassword value),
@@ -614,6 +641,7 @@ class _$_PasswordChanged
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -628,6 +656,7 @@ class _$_PasswordChanged
     TResult userNameChanged(_UserNameChanged value),
     TResult emailAddressChanged(_EmailAddressChanged value),
     TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     TResult registerWithWithEmailandPassword(
         _RegisterWithWithEmailandPassword value),
     TResult signInWithWithEmailandPassword(
@@ -651,6 +680,189 @@ abstract class _PasswordChanged implements SignInFormEvent {
   String get rawPassword;
   @JsonKey(ignore: true)
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ConfirmPasswordChangedCopyWith<$Res> {
+  factory _$ConfirmPasswordChangedCopyWith(_ConfirmPasswordChanged value,
+          $Res Function(_ConfirmPasswordChanged) then) =
+      __$ConfirmPasswordChangedCopyWithImpl<$Res>;
+  $Res call({String rawConfirmPassword});
+}
+
+/// @nodoc
+class __$ConfirmPasswordChangedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$ConfirmPasswordChangedCopyWith<$Res> {
+  __$ConfirmPasswordChangedCopyWithImpl(_ConfirmPasswordChanged _value,
+      $Res Function(_ConfirmPasswordChanged) _then)
+      : super(_value, (v) => _then(v as _ConfirmPasswordChanged));
+
+  @override
+  _ConfirmPasswordChanged get _value => super._value as _ConfirmPasswordChanged;
+
+  @override
+  $Res call({
+    Object rawConfirmPassword = freezed,
+  }) {
+    return _then(_ConfirmPasswordChanged(
+      rawConfirmPassword == freezed
+          ? _value.rawConfirmPassword
+          : rawConfirmPassword as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ConfirmPasswordChanged
+    with DiagnosticableTreeMixin
+    implements _ConfirmPasswordChanged {
+  const _$_ConfirmPasswordChanged(this.rawConfirmPassword)
+      : assert(rawConfirmPassword != null);
+
+  @override
+  final String rawConfirmPassword;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SignInFormEvent.confirmPasswordChanged(rawConfirmPassword: $rawConfirmPassword)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'SignInFormEvent.confirmPasswordChanged'))
+      ..add(DiagnosticsProperty('rawConfirmPassword', rawConfirmPassword));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ConfirmPasswordChanged &&
+            (identical(other.rawConfirmPassword, rawConfirmPassword) ||
+                const DeepCollectionEquality()
+                    .equals(other.rawConfirmPassword, rawConfirmPassword)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(rawConfirmPassword);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ConfirmPasswordChangedCopyWith<_ConfirmPasswordChanged> get copyWith =>
+      __$ConfirmPasswordChangedCopyWithImpl<_ConfirmPasswordChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult userNameChanged(String rawUserName),
+    @required TResult emailAddressChanged(String rawEmailAddress),
+    @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
+    @required TResult registerWithWithEmailandPassword(),
+    @required TResult signInWithWithEmailandPassword(),
+    @required TResult resetForgottenPassword(),
+    @required TResult enableAutoValidate(),
+    @required TResult obscureTextTapped(),
+  }) {
+    assert(userNameChanged != null);
+    assert(emailAddressChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
+    assert(registerWithWithEmailandPassword != null);
+    assert(signInWithWithEmailandPassword != null);
+    assert(resetForgottenPassword != null);
+    assert(enableAutoValidate != null);
+    assert(obscureTextTapped != null);
+    return confirmPasswordChanged(rawConfirmPassword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult userNameChanged(String rawUserName),
+    TResult emailAddressChanged(String rawEmailAddress),
+    TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
+    TResult registerWithWithEmailandPassword(),
+    TResult signInWithWithEmailandPassword(),
+    TResult resetForgottenPassword(),
+    TResult enableAutoValidate(),
+    TResult obscureTextTapped(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (confirmPasswordChanged != null) {
+      return confirmPasswordChanged(rawConfirmPassword);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult userNameChanged(_UserNameChanged value),
+    @required TResult emailAddressChanged(_EmailAddressChanged value),
+    @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
+    @required
+        TResult registerWithWithEmailandPassword(
+            _RegisterWithWithEmailandPassword value),
+    @required
+        TResult signInWithWithEmailandPassword(
+            _SignInWithWithEmailandPassword value),
+    @required TResult resetForgottenPassword(_ResetForgottenPasswprd value),
+    @required TResult enableAutoValidate(_EnableAutoValidate value),
+    @required TResult obscureTextTapped(_ObscureTextTapped value),
+  }) {
+    assert(userNameChanged != null);
+    assert(emailAddressChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
+    assert(registerWithWithEmailandPassword != null);
+    assert(signInWithWithEmailandPassword != null);
+    assert(resetForgottenPassword != null);
+    assert(enableAutoValidate != null);
+    assert(obscureTextTapped != null);
+    return confirmPasswordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult userNameChanged(_UserNameChanged value),
+    TResult emailAddressChanged(_EmailAddressChanged value),
+    TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
+    TResult registerWithWithEmailandPassword(
+        _RegisterWithWithEmailandPassword value),
+    TResult signInWithWithEmailandPassword(
+        _SignInWithWithEmailandPassword value),
+    TResult resetForgottenPassword(_ResetForgottenPasswprd value),
+    TResult enableAutoValidate(_EnableAutoValidate value),
+    TResult obscureTextTapped(_ObscureTextTapped value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (confirmPasswordChanged != null) {
+      return confirmPasswordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ConfirmPasswordChanged implements SignInFormEvent {
+  const factory _ConfirmPasswordChanged(String rawConfirmPassword) =
+      _$_ConfirmPasswordChanged;
+
+  String get rawConfirmPassword;
+  @JsonKey(ignore: true)
+  _$ConfirmPasswordChangedCopyWith<_ConfirmPasswordChanged> get copyWith;
 }
 
 /// @nodoc
@@ -709,6 +921,7 @@ class _$_RegisterWithWithEmailandPassword
     @required TResult userNameChanged(String rawUserName),
     @required TResult emailAddressChanged(String rawEmailAddress),
     @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
     @required TResult registerWithWithEmailandPassword(),
     @required TResult signInWithWithEmailandPassword(),
     @required TResult resetForgottenPassword(),
@@ -718,6 +931,7 @@ class _$_RegisterWithWithEmailandPassword
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -732,6 +946,7 @@ class _$_RegisterWithWithEmailandPassword
     TResult userNameChanged(String rawUserName),
     TResult emailAddressChanged(String rawEmailAddress),
     TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
     TResult registerWithWithEmailandPassword(),
     TResult signInWithWithEmailandPassword(),
     TResult resetForgottenPassword(),
@@ -752,6 +967,7 @@ class _$_RegisterWithWithEmailandPassword
     @required TResult userNameChanged(_UserNameChanged value),
     @required TResult emailAddressChanged(_EmailAddressChanged value),
     @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     @required
         TResult registerWithWithEmailandPassword(
             _RegisterWithWithEmailandPassword value),
@@ -765,6 +981,7 @@ class _$_RegisterWithWithEmailandPassword
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -779,6 +996,7 @@ class _$_RegisterWithWithEmailandPassword
     TResult userNameChanged(_UserNameChanged value),
     TResult emailAddressChanged(_EmailAddressChanged value),
     TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     TResult registerWithWithEmailandPassword(
         _RegisterWithWithEmailandPassword value),
     TResult signInWithWithEmailandPassword(
@@ -856,6 +1074,7 @@ class _$_SignInWithWithEmailandPassword
     @required TResult userNameChanged(String rawUserName),
     @required TResult emailAddressChanged(String rawEmailAddress),
     @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
     @required TResult registerWithWithEmailandPassword(),
     @required TResult signInWithWithEmailandPassword(),
     @required TResult resetForgottenPassword(),
@@ -865,6 +1084,7 @@ class _$_SignInWithWithEmailandPassword
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -879,6 +1099,7 @@ class _$_SignInWithWithEmailandPassword
     TResult userNameChanged(String rawUserName),
     TResult emailAddressChanged(String rawEmailAddress),
     TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
     TResult registerWithWithEmailandPassword(),
     TResult signInWithWithEmailandPassword(),
     TResult resetForgottenPassword(),
@@ -899,6 +1120,7 @@ class _$_SignInWithWithEmailandPassword
     @required TResult userNameChanged(_UserNameChanged value),
     @required TResult emailAddressChanged(_EmailAddressChanged value),
     @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     @required
         TResult registerWithWithEmailandPassword(
             _RegisterWithWithEmailandPassword value),
@@ -912,6 +1134,7 @@ class _$_SignInWithWithEmailandPassword
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -926,6 +1149,7 @@ class _$_SignInWithWithEmailandPassword
     TResult userNameChanged(_UserNameChanged value),
     TResult emailAddressChanged(_EmailAddressChanged value),
     TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     TResult registerWithWithEmailandPassword(
         _RegisterWithWithEmailandPassword value),
     TResult signInWithWithEmailandPassword(
@@ -1000,6 +1224,7 @@ class _$_ResetForgottenPasswprd
     @required TResult userNameChanged(String rawUserName),
     @required TResult emailAddressChanged(String rawEmailAddress),
     @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
     @required TResult registerWithWithEmailandPassword(),
     @required TResult signInWithWithEmailandPassword(),
     @required TResult resetForgottenPassword(),
@@ -1009,6 +1234,7 @@ class _$_ResetForgottenPasswprd
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -1023,6 +1249,7 @@ class _$_ResetForgottenPasswprd
     TResult userNameChanged(String rawUserName),
     TResult emailAddressChanged(String rawEmailAddress),
     TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
     TResult registerWithWithEmailandPassword(),
     TResult signInWithWithEmailandPassword(),
     TResult resetForgottenPassword(),
@@ -1043,6 +1270,7 @@ class _$_ResetForgottenPasswprd
     @required TResult userNameChanged(_UserNameChanged value),
     @required TResult emailAddressChanged(_EmailAddressChanged value),
     @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     @required
         TResult registerWithWithEmailandPassword(
             _RegisterWithWithEmailandPassword value),
@@ -1056,6 +1284,7 @@ class _$_ResetForgottenPasswprd
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -1070,6 +1299,7 @@ class _$_ResetForgottenPasswprd
     TResult userNameChanged(_UserNameChanged value),
     TResult emailAddressChanged(_EmailAddressChanged value),
     TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     TResult registerWithWithEmailandPassword(
         _RegisterWithWithEmailandPassword value),
     TResult signInWithWithEmailandPassword(
@@ -1142,6 +1372,7 @@ class _$_EnableAutoValidate
     @required TResult userNameChanged(String rawUserName),
     @required TResult emailAddressChanged(String rawEmailAddress),
     @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
     @required TResult registerWithWithEmailandPassword(),
     @required TResult signInWithWithEmailandPassword(),
     @required TResult resetForgottenPassword(),
@@ -1151,6 +1382,7 @@ class _$_EnableAutoValidate
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -1165,6 +1397,7 @@ class _$_EnableAutoValidate
     TResult userNameChanged(String rawUserName),
     TResult emailAddressChanged(String rawEmailAddress),
     TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
     TResult registerWithWithEmailandPassword(),
     TResult signInWithWithEmailandPassword(),
     TResult resetForgottenPassword(),
@@ -1185,6 +1418,7 @@ class _$_EnableAutoValidate
     @required TResult userNameChanged(_UserNameChanged value),
     @required TResult emailAddressChanged(_EmailAddressChanged value),
     @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     @required
         TResult registerWithWithEmailandPassword(
             _RegisterWithWithEmailandPassword value),
@@ -1198,6 +1432,7 @@ class _$_EnableAutoValidate
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -1212,6 +1447,7 @@ class _$_EnableAutoValidate
     TResult userNameChanged(_UserNameChanged value),
     TResult emailAddressChanged(_EmailAddressChanged value),
     TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     TResult registerWithWithEmailandPassword(
         _RegisterWithWithEmailandPassword value),
     TResult signInWithWithEmailandPassword(
@@ -1284,6 +1520,7 @@ class _$_ObscureTextTapped
     @required TResult userNameChanged(String rawUserName),
     @required TResult emailAddressChanged(String rawEmailAddress),
     @required TResult passwordChanged(String rawPassword),
+    @required TResult confirmPasswordChanged(String rawConfirmPassword),
     @required TResult registerWithWithEmailandPassword(),
     @required TResult signInWithWithEmailandPassword(),
     @required TResult resetForgottenPassword(),
@@ -1293,6 +1530,7 @@ class _$_ObscureTextTapped
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -1307,6 +1545,7 @@ class _$_ObscureTextTapped
     TResult userNameChanged(String rawUserName),
     TResult emailAddressChanged(String rawEmailAddress),
     TResult passwordChanged(String rawPassword),
+    TResult confirmPasswordChanged(String rawConfirmPassword),
     TResult registerWithWithEmailandPassword(),
     TResult signInWithWithEmailandPassword(),
     TResult resetForgottenPassword(),
@@ -1327,6 +1566,7 @@ class _$_ObscureTextTapped
     @required TResult userNameChanged(_UserNameChanged value),
     @required TResult emailAddressChanged(_EmailAddressChanged value),
     @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     @required
         TResult registerWithWithEmailandPassword(
             _RegisterWithWithEmailandPassword value),
@@ -1340,6 +1580,7 @@ class _$_ObscureTextTapped
     assert(userNameChanged != null);
     assert(emailAddressChanged != null);
     assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
     assert(registerWithWithEmailandPassword != null);
     assert(signInWithWithEmailandPassword != null);
     assert(resetForgottenPassword != null);
@@ -1354,6 +1595,7 @@ class _$_ObscureTextTapped
     TResult userNameChanged(_UserNameChanged value),
     TResult emailAddressChanged(_EmailAddressChanged value),
     TResult passwordChanged(_PasswordChanged value),
+    TResult confirmPasswordChanged(_ConfirmPasswordChanged value),
     TResult registerWithWithEmailandPassword(
         _RegisterWithWithEmailandPassword value),
     TResult signInWithWithEmailandPassword(
@@ -1383,6 +1625,7 @@ class _$SignInFormStateTearOff {
   _SignInFormState call(
       {@required EmailAddress emailAddress,
       @required Password password,
+      @required Password confirmPassword,
       @required UserName userName,
       @required bool showErrorMessages,
       @required bool obscureTextValue,
@@ -1391,6 +1634,7 @@ class _$SignInFormStateTearOff {
     return _SignInFormState(
       emailAddress: emailAddress,
       password: password,
+      confirmPassword: confirmPassword,
       userName: userName,
       showErrorMessages: showErrorMessages,
       obscureTextValue: obscureTextValue,
@@ -1408,6 +1652,7 @@ const $SignInFormState = _$SignInFormStateTearOff();
 mixin _$SignInFormState {
   EmailAddress get emailAddress;
   Password get password;
+  Password get confirmPassword;
   UserName get userName;
   bool get showErrorMessages;
   bool get obscureTextValue;
@@ -1426,6 +1671,7 @@ abstract class $SignInFormStateCopyWith<$Res> {
   $Res call(
       {EmailAddress emailAddress,
       Password password,
+      Password confirmPassword,
       UserName userName,
       bool showErrorMessages,
       bool obscureTextValue,
@@ -1446,6 +1692,7 @@ class _$SignInFormStateCopyWithImpl<$Res>
   $Res call({
     Object emailAddress = freezed,
     Object password = freezed,
+    Object confirmPassword = freezed,
     Object userName = freezed,
     Object showErrorMessages = freezed,
     Object obscureTextValue = freezed,
@@ -1457,6 +1704,9 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.emailAddress
           : emailAddress as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
+      confirmPassword: confirmPassword == freezed
+          ? _value.confirmPassword
+          : confirmPassword as Password,
       userName: userName == freezed ? _value.userName : userName as UserName,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
@@ -1483,6 +1733,7 @@ abstract class _$SignInFormStateCopyWith<$Res>
   $Res call(
       {EmailAddress emailAddress,
       Password password,
+      Password confirmPassword,
       UserName userName,
       bool showErrorMessages,
       bool obscureTextValue,
@@ -1505,6 +1756,7 @@ class __$SignInFormStateCopyWithImpl<$Res>
   $Res call({
     Object emailAddress = freezed,
     Object password = freezed,
+    Object confirmPassword = freezed,
     Object userName = freezed,
     Object showErrorMessages = freezed,
     Object obscureTextValue = freezed,
@@ -1516,6 +1768,9 @@ class __$SignInFormStateCopyWithImpl<$Res>
           ? _value.emailAddress
           : emailAddress as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
+      confirmPassword: confirmPassword == freezed
+          ? _value.confirmPassword
+          : confirmPassword as Password,
       userName: userName == freezed ? _value.userName : userName as UserName,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
@@ -1539,6 +1794,7 @@ class _$_SignInFormState
   const _$_SignInFormState(
       {@required this.emailAddress,
       @required this.password,
+      @required this.confirmPassword,
       @required this.userName,
       @required this.showErrorMessages,
       @required this.obscureTextValue,
@@ -1546,6 +1802,7 @@ class _$_SignInFormState
       @required this.authFailureOrSuccessOption})
       : assert(emailAddress != null),
         assert(password != null),
+        assert(confirmPassword != null),
         assert(userName != null),
         assert(showErrorMessages != null),
         assert(obscureTextValue != null),
@@ -1556,6 +1813,8 @@ class _$_SignInFormState
   final EmailAddress emailAddress;
   @override
   final Password password;
+  @override
+  final Password confirmPassword;
   @override
   final UserName userName;
   @override
@@ -1569,7 +1828,7 @@ class _$_SignInFormState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignInFormState(emailAddress: $emailAddress, password: $password, userName: $userName, showErrorMessages: $showErrorMessages, obscureTextValue: $obscureTextValue, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'SignInFormState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, userName: $userName, showErrorMessages: $showErrorMessages, obscureTextValue: $obscureTextValue, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
@@ -1579,6 +1838,7 @@ class _$_SignInFormState
       ..add(DiagnosticsProperty('type', 'SignInFormState'))
       ..add(DiagnosticsProperty('emailAddress', emailAddress))
       ..add(DiagnosticsProperty('password', password))
+      ..add(DiagnosticsProperty('confirmPassword', confirmPassword))
       ..add(DiagnosticsProperty('userName', userName))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
       ..add(DiagnosticsProperty('obscureTextValue', obscureTextValue))
@@ -1597,6 +1857,9 @@ class _$_SignInFormState
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
                     .equals(other.password, password)) &&
+            (identical(other.confirmPassword, confirmPassword) ||
+                const DeepCollectionEquality()
+                    .equals(other.confirmPassword, confirmPassword)) &&
             (identical(other.userName, userName) ||
                 const DeepCollectionEquality()
                     .equals(other.userName, userName)) &&
@@ -1621,6 +1884,7 @@ class _$_SignInFormState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(emailAddress) ^
       const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(confirmPassword) ^
       const DeepCollectionEquality().hash(userName) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(obscureTextValue) ^
@@ -1640,6 +1904,8 @@ abstract class _SignInFormState implements SignInFormState {
           @required
               Password password,
           @required
+              Password confirmPassword,
+          @required
               UserName userName,
           @required
               bool showErrorMessages,
@@ -1655,6 +1921,8 @@ abstract class _SignInFormState implements SignInFormState {
   EmailAddress get emailAddress;
   @override
   Password get password;
+  @override
+  Password get confirmPassword;
   @override
   UserName get userName;
   @override
