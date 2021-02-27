@@ -14,31 +14,56 @@ class SplashScreen extends StatelessWidget {
         state.map(
             initial: (_) {},
             authenticated: (_) {
-              ExtendedNavigator.of(context).replace(Routes.homePage);
+              Future.delayed(const Duration(milliseconds: 1500)).then((value) =>
+                  ExtendedNavigator.of(context).replace(Routes.homePage));
             },
             unauthenticated: (_) {
-              ExtendedNavigator.of(context).replace(Routes.signInPage);
+              Future.delayed(const Duration(milliseconds: 1500)).then((value) =>
+                  ExtendedNavigator.of(context).replace(Routes.signInPage));
             });
       },
       child: Scaffold(
-          backgroundColor: ConstantColors.primaryColor,
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                " Loan Machine",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30),
+          body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("assets/images/splash_screen.png"))),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(
+              height: 1,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                    height: 130,
+                    width: 130,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                    child: Image.asset(
+                      "assets/images/Logo.png",
+                      height: 64,
+                      width: 64,
+                    )),
+                // const SizedBox(height: 5),
+                const Center(
+                    child: CupertinoActivityIndicator(
+                  radius: 16,
+                )),
+              ],
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 18.0),
+              child: Text(
+                "Version  ${Constants.version}",
+                style: TextStyle(color: Colors.white),
               ),
-              SizedBox(height: 20),
-              Center(
-                  child: CupertinoActivityIndicator(
-                radius: 20,
-              )),
-            ],
-          )),
+            )
+          ],
+        ),
+      )),
     );
   }
 }

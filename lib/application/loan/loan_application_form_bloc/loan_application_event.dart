@@ -2,6 +2,9 @@ part of 'loan_application_bloc.dart';
 
 @freezed
 abstract class LoanApplicationEvent with _$LoanApplicationEvent {
+  const factory LoanApplicationEvent.initialised(
+      Option<LoanApplicationInfo> initialLaInfoOption) = _Initialised;
+
   const factory LoanApplicationEvent.genderChanged(String rawGender) =
       _GenderChanged;
 

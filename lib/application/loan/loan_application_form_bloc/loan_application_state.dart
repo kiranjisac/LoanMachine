@@ -5,19 +5,8 @@ abstract class LoanApplicationState with _$LoanApplicationState {
   const factory LoanApplicationState({
     @required bool showErrorMessages,
     @required bool isSubmitting,
-    @required UniqueId applicationUniqueId,
-    @required LoanApplicationName loanApplicationName,
-    @required Gender gender,
-    @required Married married,
-    @required Education education,
-    @required SelfEmployed selfEmployed,
-    @required Dependents dependents,
-    @required ApplicantIncome applicantIncome,
-    @required CoApplicantIncome coApplicantIncome,
-    @required LoanAmount loanAmount,
-    @required LoanTerm loanTerm,
-    @required CreditHistory creditHistory,
-    @required PropertyArea propertyArea,
+    @required bool isEditing,
+    @required LoanApplicationInfo loanApplicationInfo,
     @required
         Option<Either<LoanApplicationFailure, Unit>> loanFailureOrSuccessOption,
   }) = _LoanApplicationState;
@@ -25,18 +14,12 @@ abstract class LoanApplicationState with _$LoanApplicationState {
   factory LoanApplicationState.initial() => LoanApplicationState(
       showErrorMessages: false,
       isSubmitting: false,
-      applicationUniqueId: UniqueId(),
-      loanApplicationName: LoanApplicationName(""),
-      gender: Gender("Male"),
-      married: Married("No"),
-      education: Education(""),
-      selfEmployed: SelfEmployed("No"),
-      dependents: Dependents(-1),
-      applicantIncome: ApplicantIncome(""),
-      coApplicantIncome: CoApplicantIncome(""),
-      loanAmount: LoanAmount(""),
-      loanTerm: LoanTerm(0),
-      creditHistory: CreditHistory("Yes"),
-      propertyArea: PropertyArea(""),
+      isEditing: false,
+      loanApplicationInfo: LoanApplicationInfo.empty().copyWith(
+        gender: Gender("Male"),
+        married: Married("No"),
+        selfEmployed: SelfEmployed("No"),
+        creditHistory: CreditHistory("Yes"),
+      ),
       loanFailureOrSuccessOption: none());
 }

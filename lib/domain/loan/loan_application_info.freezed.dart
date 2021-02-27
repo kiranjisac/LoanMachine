@@ -28,7 +28,8 @@ class _$LoanApplicationInfoTearOff {
       @required CreditHistory creditHistory,
       @required PropertyArea propertyArea,
       @required ApplicantIncome applicantIncome,
-      @required CoApplicantIncome coApplicantIncome}) {
+      @required CoApplicantIncome coApplicantIncome,
+      String loanStatus}) {
     return _LoanApplicationInfo(
       applicationUniqueId: applicationUniqueId,
       appicantUniqueId: appicantUniqueId,
@@ -44,6 +45,7 @@ class _$LoanApplicationInfoTearOff {
       propertyArea: propertyArea,
       applicantIncome: applicantIncome,
       coApplicantIncome: coApplicantIncome,
+      loanStatus: loanStatus,
     );
   }
 }
@@ -68,6 +70,7 @@ mixin _$LoanApplicationInfo {
   PropertyArea get propertyArea;
   ApplicantIncome get applicantIncome;
   CoApplicantIncome get coApplicantIncome;
+  String get loanStatus;
 
   @JsonKey(ignore: true)
   $LoanApplicationInfoCopyWith<LoanApplicationInfo> get copyWith;
@@ -92,7 +95,8 @@ abstract class $LoanApplicationInfoCopyWith<$Res> {
       CreditHistory creditHistory,
       PropertyArea propertyArea,
       ApplicantIncome applicantIncome,
-      CoApplicantIncome coApplicantIncome});
+      CoApplicantIncome coApplicantIncome,
+      String loanStatus});
 }
 
 /// @nodoc
@@ -120,6 +124,7 @@ class _$LoanApplicationInfoCopyWithImpl<$Res>
     Object propertyArea = freezed,
     Object applicantIncome = freezed,
     Object coApplicantIncome = freezed,
+    Object loanStatus = freezed,
   }) {
     return _then(_value.copyWith(
       applicationUniqueId: applicationUniqueId == freezed
@@ -155,6 +160,8 @@ class _$LoanApplicationInfoCopyWithImpl<$Res>
       coApplicantIncome: coApplicantIncome == freezed
           ? _value.coApplicantIncome
           : coApplicantIncome as CoApplicantIncome,
+      loanStatus:
+          loanStatus == freezed ? _value.loanStatus : loanStatus as String,
     ));
   }
 }
@@ -180,7 +187,8 @@ abstract class _$LoanApplicationInfoCopyWith<$Res>
       CreditHistory creditHistory,
       PropertyArea propertyArea,
       ApplicantIncome applicantIncome,
-      CoApplicantIncome coApplicantIncome});
+      CoApplicantIncome coApplicantIncome,
+      String loanStatus});
 }
 
 /// @nodoc
@@ -210,6 +218,7 @@ class __$LoanApplicationInfoCopyWithImpl<$Res>
     Object propertyArea = freezed,
     Object applicantIncome = freezed,
     Object coApplicantIncome = freezed,
+    Object loanStatus = freezed,
   }) {
     return _then(_LoanApplicationInfo(
       applicationUniqueId: applicationUniqueId == freezed
@@ -245,6 +254,8 @@ class __$LoanApplicationInfoCopyWithImpl<$Res>
       coApplicantIncome: coApplicantIncome == freezed
           ? _value.coApplicantIncome
           : coApplicantIncome as CoApplicantIncome,
+      loanStatus:
+          loanStatus == freezed ? _value.loanStatus : loanStatus as String,
     ));
   }
 }
@@ -266,7 +277,8 @@ class _$_LoanApplicationInfo extends _LoanApplicationInfo
       @required this.creditHistory,
       @required this.propertyArea,
       @required this.applicantIncome,
-      @required this.coApplicantIncome})
+      @required this.coApplicantIncome,
+      this.loanStatus})
       : assert(applicationUniqueId != null),
         assert(appicantUniqueId != null),
         assert(loanApplicationName != null),
@@ -311,10 +323,12 @@ class _$_LoanApplicationInfo extends _LoanApplicationInfo
   final ApplicantIncome applicantIncome;
   @override
   final CoApplicantIncome coApplicantIncome;
+  @override
+  final String loanStatus;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LoanApplicationInfo(applicationUniqueId: $applicationUniqueId, appicantUniqueId: $appicantUniqueId, loanApplicationName: $loanApplicationName, gender: $gender, selfEmployed: $selfEmployed, married: $married, education: $education, loanAmount: $loanAmount, loanTerm: $loanTerm, dependents: $dependents, creditHistory: $creditHistory, propertyArea: $propertyArea, applicantIncome: $applicantIncome, coApplicantIncome: $coApplicantIncome)';
+    return 'LoanApplicationInfo(applicationUniqueId: $applicationUniqueId, appicantUniqueId: $appicantUniqueId, loanApplicationName: $loanApplicationName, gender: $gender, selfEmployed: $selfEmployed, married: $married, education: $education, loanAmount: $loanAmount, loanTerm: $loanTerm, dependents: $dependents, creditHistory: $creditHistory, propertyArea: $propertyArea, applicantIncome: $applicantIncome, coApplicantIncome: $coApplicantIncome, loanStatus: $loanStatus)';
   }
 
   @override
@@ -335,7 +349,8 @@ class _$_LoanApplicationInfo extends _LoanApplicationInfo
       ..add(DiagnosticsProperty('creditHistory', creditHistory))
       ..add(DiagnosticsProperty('propertyArea', propertyArea))
       ..add(DiagnosticsProperty('applicantIncome', applicantIncome))
-      ..add(DiagnosticsProperty('coApplicantIncome', coApplicantIncome));
+      ..add(DiagnosticsProperty('coApplicantIncome', coApplicantIncome))
+      ..add(DiagnosticsProperty('loanStatus', loanStatus));
   }
 
   @override
@@ -382,7 +397,10 @@ class _$_LoanApplicationInfo extends _LoanApplicationInfo
                     .equals(other.applicantIncome, applicantIncome)) &&
             (identical(other.coApplicantIncome, coApplicantIncome) ||
                 const DeepCollectionEquality()
-                    .equals(other.coApplicantIncome, coApplicantIncome)));
+                    .equals(other.coApplicantIncome, coApplicantIncome)) &&
+            (identical(other.loanStatus, loanStatus) ||
+                const DeepCollectionEquality()
+                    .equals(other.loanStatus, loanStatus)));
   }
 
   @override
@@ -401,7 +419,8 @@ class _$_LoanApplicationInfo extends _LoanApplicationInfo
       const DeepCollectionEquality().hash(creditHistory) ^
       const DeepCollectionEquality().hash(propertyArea) ^
       const DeepCollectionEquality().hash(applicantIncome) ^
-      const DeepCollectionEquality().hash(coApplicantIncome);
+      const DeepCollectionEquality().hash(coApplicantIncome) ^
+      const DeepCollectionEquality().hash(loanStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -426,7 +445,8 @@ abstract class _LoanApplicationInfo extends LoanApplicationInfo {
       @required CreditHistory creditHistory,
       @required PropertyArea propertyArea,
       @required ApplicantIncome applicantIncome,
-      @required CoApplicantIncome coApplicantIncome}) = _$_LoanApplicationInfo;
+      @required CoApplicantIncome coApplicantIncome,
+      String loanStatus}) = _$_LoanApplicationInfo;
 
   @override
   UniqueId get applicationUniqueId;
@@ -456,6 +476,8 @@ abstract class _LoanApplicationInfo extends LoanApplicationInfo {
   ApplicantIncome get applicantIncome;
   @override
   CoApplicantIncome get coApplicantIncome;
+  @override
+  String get loanStatus;
   @override
   @JsonKey(ignore: true)
   _$LoanApplicationInfoCopyWith<_LoanApplicationInfo> get copyWith;

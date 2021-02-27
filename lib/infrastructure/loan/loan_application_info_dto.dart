@@ -23,8 +23,8 @@ abstract class LoanApplicationInfoDto implements _$LoanApplicationInfoDto {
     double applicantIncome,
     double coApplicantIncome,
     double loanAmount,
+    String loanStatus,
   }) = _LoanApplicationInfoDto;
-
   factory LoanApplicationInfoDto.fromDomain(LoanApplicationInfo laInfo) {
     return LoanApplicationInfoDto(
         loanApplicantionName: laInfo.loanApplicationName.getOrCrash(),
@@ -40,7 +40,8 @@ abstract class LoanApplicationInfoDto implements _$LoanApplicationInfoDto {
         applicantIncome: laInfo.applicantIncome.getOrCrash(),
         coApplicantIncome: laInfo.coApplicantIncome.getOrCrash(),
         propertyArea: laInfo.propertyArea.getOrCrash(),
-        creditHistory: laInfo.creditHistory.getOrCrash());
+        creditHistory: laInfo.creditHistory.getOrCrash(),
+        loanStatus: laInfo.loanStatus);
   }
 
   LoanApplicationInfo toDomain() {
@@ -58,7 +59,8 @@ abstract class LoanApplicationInfoDto implements _$LoanApplicationInfoDto {
         creditHistory: CreditHistory(creditHistory),
         propertyArea: PropertyArea(propertyArea),
         applicantIncome: ApplicantIncome(applicantIncome.toString()),
-        coApplicantIncome: CoApplicantIncome(coApplicantIncome.toString()));
+        coApplicantIncome: CoApplicantIncome(coApplicantIncome.toString()),
+        loanStatus: loanStatus);
   }
 
   factory LoanApplicationInfoDto.fromMap(Map<String, String> laInfoMap) {
@@ -78,7 +80,8 @@ abstract class LoanApplicationInfoDto implements _$LoanApplicationInfoDto {
         applicantIncome:
             double.parse(laInfoMap[Constants.loanColumnApplicantIncome]),
         coApplicantIncome:
-            double.parse(laInfoMap[Constants.loanColumnCoApplicantIncome]));
+            double.parse(laInfoMap[Constants.loanColumnCoApplicantIncome]),
+        loanStatus: laInfoMap[Constants.loanColumnLoanStatus]);
   }
 
   Map<String, String> toMap() => <String, String>{
@@ -95,7 +98,8 @@ abstract class LoanApplicationInfoDto implements _$LoanApplicationInfoDto {
         Constants.loanColumnAmount: loanAmount.toString(),
         Constants.loanColumnTerm: loanTerm.toString(),
         Constants.loanColumnPropertyArea: propertyArea,
-        Constants.loanColumnCreditHistory: creditHistory
+        Constants.loanColumnCreditHistory: creditHistory,
+        Constants.loanColumnLoanStatus: loanStatus
       };
   const LoanApplicationInfoDto._();
 }

@@ -29,7 +29,7 @@ class SignInPage extends StatelessWidget {
       direction: Axis.vertical,
       children: [
         SizedBox(
-          height: screenSize.height / 2 - 10,
+          height: screenSize.height / 1.85 - 15,
         ),
         const Flexible(child: SignInForm()),
       ],
@@ -40,9 +40,13 @@ class SignInPage extends StatelessWidget {
     return ClipPath(
       clipper: LogInPageClipper(),
       child: Container(
-        height: screenSize.height / 2,
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("assets/images/log_in.jpg"))),
+        height: screenSize.height / 1.85,
         width: screenSize.width,
-        color: ConstantColors.primaryColor,
+        //color: ConstantColors.primaryColor,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,11 +92,11 @@ class LogInPageClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     final path = Path();
 
-    path.lineTo(0.0, size.height * 0.88);
-    path.quadraticBezierTo(size.width * 0.25, size.height * 0.76,
-        size.width * 0.5, size.height * 0.88);
+    path.lineTo(0.0, size.height * 0.90);
+    path.quadraticBezierTo(size.width * 0.25, size.height * 0.80,
+        size.width * 0.5, size.height * 0.90);
     path.quadraticBezierTo(
-        size.width * 0.75, size.height, size.width, size.height * 0.88);
+        size.width * 0.75, size.height, size.width, size.height * 0.90);
     path.lineTo(size.width, 0.0);
     path.close();
 
@@ -147,26 +151,31 @@ class SignInForm extends StatelessWidget {
             autovalidateMode: state.showErrorMessages == true
                 ? AutovalidateMode.always
                 : AutovalidateMode.disabled,
-            child: ListView(
-                physics: const BouncingScrollPhysics(),
-                shrinkWrap: true,
-                padding: const EdgeInsets.all(25),
-                children: [
-                  buildEmailAddressFormField(context, primaryColor),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  buildPasswordFormField(context, primaryColor),
-                  const SizedBox(height: 6),
-                  buildforgotPassword(context, primaryColor),
-                  const SizedBox(height: 20),
-                  buildLogInButton(primaryColor, context),
-                  const SizedBox(height: 10),
-                  buildOrDivider(secondaryColor),
-                  const SizedBox(height: 10),
-                  buildSignUpButton(secondaryColor, primaryColor, context),
-                  const SizedBox(height: 10),
-                ]),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    buildEmailAddressFormField(context, primaryColor),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    buildPasswordFormField(context, primaryColor),
+                    const SizedBox(height: 6),
+                    buildforgotPassword(context, primaryColor),
+                    const SizedBox(height: 20),
+                    buildLogInButton(primaryColor, context),
+                    const SizedBox(height: 10),
+                    buildOrDivider(secondaryColor),
+                    const SizedBox(height: 10),
+                    buildSignUpButton(secondaryColor, primaryColor, context),
+                    const SizedBox(height: 10),
+                  ]),
+            ),
           ),
         );
       },

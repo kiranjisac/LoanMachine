@@ -30,7 +30,7 @@ class LoanApplicationWatcherBloc
 
       yield successOrFailure.fold(
           (f) => LoanApplicationWatcherState.loadedFailure(f),
-          (r) => LoanApplicationWatcherState.loadedSuccess(r));
+          (list) => LoanApplicationWatcherState.loadedSuccess(list.reversed()));
     });
   }
 }

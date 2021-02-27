@@ -28,7 +28,8 @@ class _$LoanApplicationInfoDtoTearOff {
       int loanTerm,
       double applicantIncome,
       double coApplicantIncome,
-      double loanAmount}) {
+      double loanAmount,
+      String loanStatus}) {
     return _LoanApplicationInfoDto(
       applicationUniqueId: applicationUniqueId,
       loanApplicantionName: loanApplicantionName,
@@ -44,6 +45,7 @@ class _$LoanApplicationInfoDtoTearOff {
       applicantIncome: applicantIncome,
       coApplicantIncome: coApplicantIncome,
       loanAmount: loanAmount,
+      loanStatus: loanStatus,
     );
   }
 }
@@ -68,6 +70,7 @@ mixin _$LoanApplicationInfoDto {
   double get applicantIncome;
   double get coApplicantIncome;
   double get loanAmount;
+  String get loanStatus;
 
   @JsonKey(ignore: true)
   $LoanApplicationInfoDtoCopyWith<LoanApplicationInfoDto> get copyWith;
@@ -92,7 +95,8 @@ abstract class $LoanApplicationInfoDtoCopyWith<$Res> {
       int loanTerm,
       double applicantIncome,
       double coApplicantIncome,
-      double loanAmount});
+      double loanAmount,
+      String loanStatus});
 }
 
 /// @nodoc
@@ -120,6 +124,7 @@ class _$LoanApplicationInfoDtoCopyWithImpl<$Res>
     Object applicantIncome = freezed,
     Object coApplicantIncome = freezed,
     Object loanAmount = freezed,
+    Object loanStatus = freezed,
   }) {
     return _then(_value.copyWith(
       applicationUniqueId: applicationUniqueId == freezed
@@ -153,6 +158,8 @@ class _$LoanApplicationInfoDtoCopyWithImpl<$Res>
           : coApplicantIncome as double,
       loanAmount:
           loanAmount == freezed ? _value.loanAmount : loanAmount as double,
+      loanStatus:
+          loanStatus == freezed ? _value.loanStatus : loanStatus as String,
     ));
   }
 }
@@ -178,7 +185,8 @@ abstract class _$LoanApplicationInfoDtoCopyWith<$Res>
       int loanTerm,
       double applicantIncome,
       double coApplicantIncome,
-      double loanAmount});
+      double loanAmount,
+      String loanStatus});
 }
 
 /// @nodoc
@@ -208,6 +216,7 @@ class __$LoanApplicationInfoDtoCopyWithImpl<$Res>
     Object applicantIncome = freezed,
     Object coApplicantIncome = freezed,
     Object loanAmount = freezed,
+    Object loanStatus = freezed,
   }) {
     return _then(_LoanApplicationInfoDto(
       applicationUniqueId: applicationUniqueId == freezed
@@ -241,6 +250,8 @@ class __$LoanApplicationInfoDtoCopyWithImpl<$Res>
           : coApplicantIncome as double,
       loanAmount:
           loanAmount == freezed ? _value.loanAmount : loanAmount as double,
+      loanStatus:
+          loanStatus == freezed ? _value.loanStatus : loanStatus as String,
     ));
   }
 }
@@ -261,7 +272,8 @@ class _$_LoanApplicationInfoDto extends _LoanApplicationInfoDto {
       this.loanTerm,
       this.applicantIncome,
       this.coApplicantIncome,
-      this.loanAmount})
+      this.loanAmount,
+      this.loanStatus})
       : super._();
 
   @override
@@ -292,10 +304,12 @@ class _$_LoanApplicationInfoDto extends _LoanApplicationInfoDto {
   final double coApplicantIncome;
   @override
   final double loanAmount;
+  @override
+  final String loanStatus;
 
   @override
   String toString() {
-    return 'LoanApplicationInfoDto(applicationUniqueId: $applicationUniqueId, loanApplicantionName: $loanApplicantionName, applicantUniqueId: $applicantUniqueId, gender: $gender, married: $married, selfEmployed: $selfEmployed, education: $education, propertyArea: $propertyArea, creditHistory: $creditHistory, dependents: $dependents, loanTerm: $loanTerm, applicantIncome: $applicantIncome, coApplicantIncome: $coApplicantIncome, loanAmount: $loanAmount)';
+    return 'LoanApplicationInfoDto(applicationUniqueId: $applicationUniqueId, loanApplicantionName: $loanApplicantionName, applicantUniqueId: $applicantUniqueId, gender: $gender, married: $married, selfEmployed: $selfEmployed, education: $education, propertyArea: $propertyArea, creditHistory: $creditHistory, dependents: $dependents, loanTerm: $loanTerm, applicantIncome: $applicantIncome, coApplicantIncome: $coApplicantIncome, loanAmount: $loanAmount, loanStatus: $loanStatus)';
   }
 
   @override
@@ -342,7 +356,10 @@ class _$_LoanApplicationInfoDto extends _LoanApplicationInfoDto {
                     .equals(other.coApplicantIncome, coApplicantIncome)) &&
             (identical(other.loanAmount, loanAmount) ||
                 const DeepCollectionEquality()
-                    .equals(other.loanAmount, loanAmount)));
+                    .equals(other.loanAmount, loanAmount)) &&
+            (identical(other.loanStatus, loanStatus) ||
+                const DeepCollectionEquality()
+                    .equals(other.loanStatus, loanStatus)));
   }
 
   @override
@@ -361,7 +378,8 @@ class _$_LoanApplicationInfoDto extends _LoanApplicationInfoDto {
       const DeepCollectionEquality().hash(loanTerm) ^
       const DeepCollectionEquality().hash(applicantIncome) ^
       const DeepCollectionEquality().hash(coApplicantIncome) ^
-      const DeepCollectionEquality().hash(loanAmount);
+      const DeepCollectionEquality().hash(loanAmount) ^
+      const DeepCollectionEquality().hash(loanStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -386,7 +404,8 @@ abstract class _LoanApplicationInfoDto extends LoanApplicationInfoDto {
       int loanTerm,
       double applicantIncome,
       double coApplicantIncome,
-      double loanAmount}) = _$_LoanApplicationInfoDto;
+      double loanAmount,
+      String loanStatus}) = _$_LoanApplicationInfoDto;
 
   @override
   String get applicationUniqueId;
@@ -416,6 +435,8 @@ abstract class _LoanApplicationInfoDto extends LoanApplicationInfoDto {
   double get coApplicantIncome;
   @override
   double get loanAmount;
+  @override
+  String get loanStatus;
   @override
   @JsonKey(ignore: true)
   _$LoanApplicationInfoDtoCopyWith<_LoanApplicationInfoDto> get copyWith;

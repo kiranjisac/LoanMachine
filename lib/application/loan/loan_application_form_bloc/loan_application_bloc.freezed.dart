@@ -14,6 +14,13 @@ class _$LoanApplicationEventTearOff {
   const _$LoanApplicationEventTearOff();
 
 // ignore: unused_element
+  _Initialised initialised(Option<LoanApplicationInfo> initialLaInfoOption) {
+    return _Initialised(
+      initialLaInfoOption,
+    );
+  }
+
+// ignore: unused_element
   _GenderChanged genderChanged(String rawGender) {
     return _GenderChanged(
       rawGender,
@@ -114,6 +121,8 @@ const $LoanApplicationEvent = _$LoanApplicationEventTearOff();
 mixin _$LoanApplicationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -130,6 +139,7 @@ mixin _$LoanApplicationEvent {
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -147,6 +157,7 @@ mixin _$LoanApplicationEvent {
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -165,6 +176,7 @@ mixin _$LoanApplicationEvent {
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -197,6 +209,204 @@ class _$LoanApplicationEventCopyWithImpl<$Res>
   final LoanApplicationEvent _value;
   // ignore: unused_field
   final $Res Function(LoanApplicationEvent) _then;
+}
+
+/// @nodoc
+abstract class _$InitialisedCopyWith<$Res> {
+  factory _$InitialisedCopyWith(
+          _Initialised value, $Res Function(_Initialised) then) =
+      __$InitialisedCopyWithImpl<$Res>;
+  $Res call({Option<LoanApplicationInfo> initialLaInfoOption});
+}
+
+/// @nodoc
+class __$InitialisedCopyWithImpl<$Res>
+    extends _$LoanApplicationEventCopyWithImpl<$Res>
+    implements _$InitialisedCopyWith<$Res> {
+  __$InitialisedCopyWithImpl(
+      _Initialised _value, $Res Function(_Initialised) _then)
+      : super(_value, (v) => _then(v as _Initialised));
+
+  @override
+  _Initialised get _value => super._value as _Initialised;
+
+  @override
+  $Res call({
+    Object initialLaInfoOption = freezed,
+  }) {
+    return _then(_Initialised(
+      initialLaInfoOption == freezed
+          ? _value.initialLaInfoOption
+          : initialLaInfoOption as Option<LoanApplicationInfo>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_Initialised implements _Initialised {
+  const _$_Initialised(this.initialLaInfoOption)
+      : assert(initialLaInfoOption != null);
+
+  @override
+  final Option<LoanApplicationInfo> initialLaInfoOption;
+
+  @override
+  String toString() {
+    return 'LoanApplicationEvent.initialised(initialLaInfoOption: $initialLaInfoOption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Initialised &&
+            (identical(other.initialLaInfoOption, initialLaInfoOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.initialLaInfoOption, initialLaInfoOption)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(initialLaInfoOption);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InitialisedCopyWith<_Initialised> get copyWith =>
+      __$InitialisedCopyWithImpl<_Initialised>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
+    @required TResult genderChanged(String rawGender),
+    @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
+    @required TResult marriedStatusChanged(String rawMarriedStatus),
+    @required TResult educationStatusChanged(String rawEducationStatus),
+    @required TResult dependentsChanged(int rawDependentsValue),
+    @required TResult loanAmountChanged(String rawLoanAmount),
+    @required TResult selfEmployedStatusChanged(String rawSelfEmployedStatus),
+    @required TResult applicantIncomeChanged(String rawApplicantIncome),
+    @required TResult coApplicantIncomeChanged(String rawCoApplicantIncome),
+    @required TResult loanTermChanged(int rawLoanTerm),
+    @required TResult creditHistoryChanged(String rawCreditHistory),
+    @required TResult propertyAreaChanged(String rawPropertyArea),
+    @required TResult saveData(),
+  }) {
+    assert(initialised != null);
+    assert(genderChanged != null);
+    assert(loanApplicationNameChanged != null);
+    assert(marriedStatusChanged != null);
+    assert(educationStatusChanged != null);
+    assert(dependentsChanged != null);
+    assert(loanAmountChanged != null);
+    assert(selfEmployedStatusChanged != null);
+    assert(applicantIncomeChanged != null);
+    assert(coApplicantIncomeChanged != null);
+    assert(loanTermChanged != null);
+    assert(creditHistoryChanged != null);
+    assert(propertyAreaChanged != null);
+    assert(saveData != null);
+    return initialised(initialLaInfoOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
+    TResult genderChanged(String rawGender),
+    TResult loanApplicationNameChanged(String rawLoanApplicationName),
+    TResult marriedStatusChanged(String rawMarriedStatus),
+    TResult educationStatusChanged(String rawEducationStatus),
+    TResult dependentsChanged(int rawDependentsValue),
+    TResult loanAmountChanged(String rawLoanAmount),
+    TResult selfEmployedStatusChanged(String rawSelfEmployedStatus),
+    TResult applicantIncomeChanged(String rawApplicantIncome),
+    TResult coApplicantIncomeChanged(String rawCoApplicantIncome),
+    TResult loanTermChanged(int rawLoanTerm),
+    TResult creditHistoryChanged(String rawCreditHistory),
+    TResult propertyAreaChanged(String rawPropertyArea),
+    TResult saveData(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialised != null) {
+      return initialised(initialLaInfoOption);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
+    @required TResult genderChanged(_GenderChanged value),
+    @required
+        TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
+    @required TResult marriedStatusChanged(_MarriedStatusChanged value),
+    @required TResult educationStatusChanged(_EducationStatusChanged value),
+    @required TResult dependentsChanged(_DependentsChanged value),
+    @required TResult loanAmountChanged(_LoanAmountChanged value),
+    @required
+        TResult selfEmployedStatusChanged(_SelfEmployedStatusChanged value),
+    @required TResult applicantIncomeChanged(_ApplicantIncomeChanged value),
+    @required TResult coApplicantIncomeChanged(_CoApplicantIncomeChanged value),
+    @required TResult loanTermChanged(_LoanTerChanged value),
+    @required TResult creditHistoryChanged(_CreditHistorychanged value),
+    @required TResult propertyAreaChanged(_PropertyAreaChanged value),
+    @required TResult saveData(_SaveData value),
+  }) {
+    assert(initialised != null);
+    assert(genderChanged != null);
+    assert(loanApplicationNameChanged != null);
+    assert(marriedStatusChanged != null);
+    assert(educationStatusChanged != null);
+    assert(dependentsChanged != null);
+    assert(loanAmountChanged != null);
+    assert(selfEmployedStatusChanged != null);
+    assert(applicantIncomeChanged != null);
+    assert(coApplicantIncomeChanged != null);
+    assert(loanTermChanged != null);
+    assert(creditHistoryChanged != null);
+    assert(propertyAreaChanged != null);
+    assert(saveData != null);
+    return initialised(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
+    TResult genderChanged(_GenderChanged value),
+    TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
+    TResult marriedStatusChanged(_MarriedStatusChanged value),
+    TResult educationStatusChanged(_EducationStatusChanged value),
+    TResult dependentsChanged(_DependentsChanged value),
+    TResult loanAmountChanged(_LoanAmountChanged value),
+    TResult selfEmployedStatusChanged(_SelfEmployedStatusChanged value),
+    TResult applicantIncomeChanged(_ApplicantIncomeChanged value),
+    TResult coApplicantIncomeChanged(_CoApplicantIncomeChanged value),
+    TResult loanTermChanged(_LoanTerChanged value),
+    TResult creditHistoryChanged(_CreditHistorychanged value),
+    TResult propertyAreaChanged(_PropertyAreaChanged value),
+    TResult saveData(_SaveData value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialised != null) {
+      return initialised(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initialised implements LoanApplicationEvent {
+  const factory _Initialised(Option<LoanApplicationInfo> initialLaInfoOption) =
+      _$_Initialised;
+
+  Option<LoanApplicationInfo> get initialLaInfoOption;
+  @JsonKey(ignore: true)
+  _$InitialisedCopyWith<_Initialised> get copyWith;
 }
 
 /// @nodoc
@@ -261,6 +471,8 @@ class _$_GenderChanged implements _GenderChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -275,6 +487,7 @@ class _$_GenderChanged implements _GenderChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -294,6 +507,7 @@ class _$_GenderChanged implements _GenderChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -319,6 +533,7 @@ class _$_GenderChanged implements _GenderChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -335,6 +550,7 @@ class _$_GenderChanged implements _GenderChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -354,6 +570,7 @@ class _$_GenderChanged implements _GenderChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -454,6 +671,8 @@ class _$_LoanApplicationNameChanged implements _LoanApplicationNameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -468,6 +687,7 @@ class _$_LoanApplicationNameChanged implements _LoanApplicationNameChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -487,6 +707,7 @@ class _$_LoanApplicationNameChanged implements _LoanApplicationNameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -512,6 +733,7 @@ class _$_LoanApplicationNameChanged implements _LoanApplicationNameChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -528,6 +750,7 @@ class _$_LoanApplicationNameChanged implements _LoanApplicationNameChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -547,6 +770,7 @@ class _$_LoanApplicationNameChanged implements _LoanApplicationNameChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -647,6 +871,8 @@ class _$_MarriedStatusChanged implements _MarriedStatusChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -661,6 +887,7 @@ class _$_MarriedStatusChanged implements _MarriedStatusChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -680,6 +907,7 @@ class _$_MarriedStatusChanged implements _MarriedStatusChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -705,6 +933,7 @@ class _$_MarriedStatusChanged implements _MarriedStatusChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -721,6 +950,7 @@ class _$_MarriedStatusChanged implements _MarriedStatusChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -740,6 +970,7 @@ class _$_MarriedStatusChanged implements _MarriedStatusChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -839,6 +1070,8 @@ class _$_EducationStatusChanged implements _EducationStatusChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -853,6 +1086,7 @@ class _$_EducationStatusChanged implements _EducationStatusChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -872,6 +1106,7 @@ class _$_EducationStatusChanged implements _EducationStatusChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -897,6 +1132,7 @@ class _$_EducationStatusChanged implements _EducationStatusChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -913,6 +1149,7 @@ class _$_EducationStatusChanged implements _EducationStatusChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -932,6 +1169,7 @@ class _$_EducationStatusChanged implements _EducationStatusChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -1030,6 +1268,8 @@ class _$_DependentsChanged implements _DependentsChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1044,6 +1284,7 @@ class _$_DependentsChanged implements _DependentsChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1063,6 +1304,7 @@ class _$_DependentsChanged implements _DependentsChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1088,6 +1330,7 @@ class _$_DependentsChanged implements _DependentsChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -1104,6 +1347,7 @@ class _$_DependentsChanged implements _DependentsChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1123,6 +1367,7 @@ class _$_DependentsChanged implements _DependentsChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -1218,6 +1463,8 @@ class _$_LoanAmountChanged implements _LoanAmountChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1232,6 +1479,7 @@ class _$_LoanAmountChanged implements _LoanAmountChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1251,6 +1499,7 @@ class _$_LoanAmountChanged implements _LoanAmountChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1276,6 +1525,7 @@ class _$_LoanAmountChanged implements _LoanAmountChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -1292,6 +1542,7 @@ class _$_LoanAmountChanged implements _LoanAmountChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1311,6 +1562,7 @@ class _$_LoanAmountChanged implements _LoanAmountChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -1411,6 +1663,8 @@ class _$_SelfEmployedStatusChanged implements _SelfEmployedStatusChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1425,6 +1679,7 @@ class _$_SelfEmployedStatusChanged implements _SelfEmployedStatusChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1444,6 +1699,7 @@ class _$_SelfEmployedStatusChanged implements _SelfEmployedStatusChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1469,6 +1725,7 @@ class _$_SelfEmployedStatusChanged implements _SelfEmployedStatusChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -1485,6 +1742,7 @@ class _$_SelfEmployedStatusChanged implements _SelfEmployedStatusChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1504,6 +1762,7 @@ class _$_SelfEmployedStatusChanged implements _SelfEmployedStatusChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -1603,6 +1862,8 @@ class _$_ApplicantIncomeChanged implements _ApplicantIncomeChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1617,6 +1878,7 @@ class _$_ApplicantIncomeChanged implements _ApplicantIncomeChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1636,6 +1898,7 @@ class _$_ApplicantIncomeChanged implements _ApplicantIncomeChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1661,6 +1924,7 @@ class _$_ApplicantIncomeChanged implements _ApplicantIncomeChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -1677,6 +1941,7 @@ class _$_ApplicantIncomeChanged implements _ApplicantIncomeChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1696,6 +1961,7 @@ class _$_ApplicantIncomeChanged implements _ApplicantIncomeChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -1796,6 +2062,8 @@ class _$_CoApplicantIncomeChanged implements _CoApplicantIncomeChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1810,6 +2078,7 @@ class _$_CoApplicantIncomeChanged implements _CoApplicantIncomeChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1829,6 +2098,7 @@ class _$_CoApplicantIncomeChanged implements _CoApplicantIncomeChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1854,6 +2124,7 @@ class _$_CoApplicantIncomeChanged implements _CoApplicantIncomeChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -1870,6 +2141,7 @@ class _$_CoApplicantIncomeChanged implements _CoApplicantIncomeChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -1889,6 +2161,7 @@ class _$_CoApplicantIncomeChanged implements _CoApplicantIncomeChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -1983,6 +2256,8 @@ class _$_LoanTerChanged implements _LoanTerChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -1997,6 +2272,7 @@ class _$_LoanTerChanged implements _LoanTerChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -2016,6 +2292,7 @@ class _$_LoanTerChanged implements _LoanTerChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -2041,6 +2318,7 @@ class _$_LoanTerChanged implements _LoanTerChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -2057,6 +2335,7 @@ class _$_LoanTerChanged implements _LoanTerChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -2076,6 +2355,7 @@ class _$_LoanTerChanged implements _LoanTerChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -2174,6 +2454,8 @@ class _$_CreditHistorychanged implements _CreditHistorychanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -2188,6 +2470,7 @@ class _$_CreditHistorychanged implements _CreditHistorychanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -2207,6 +2490,7 @@ class _$_CreditHistorychanged implements _CreditHistorychanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -2232,6 +2516,7 @@ class _$_CreditHistorychanged implements _CreditHistorychanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -2248,6 +2533,7 @@ class _$_CreditHistorychanged implements _CreditHistorychanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -2267,6 +2553,7 @@ class _$_CreditHistorychanged implements _CreditHistorychanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -2366,6 +2653,8 @@ class _$_PropertyAreaChanged implements _PropertyAreaChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -2380,6 +2669,7 @@ class _$_PropertyAreaChanged implements _PropertyAreaChanged {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -2399,6 +2689,7 @@ class _$_PropertyAreaChanged implements _PropertyAreaChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -2424,6 +2715,7 @@ class _$_PropertyAreaChanged implements _PropertyAreaChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -2440,6 +2732,7 @@ class _$_PropertyAreaChanged implements _PropertyAreaChanged {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -2459,6 +2752,7 @@ class _$_PropertyAreaChanged implements _PropertyAreaChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -2528,6 +2822,8 @@ class _$_SaveData implements _SaveData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required
+        TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     @required TResult genderChanged(String rawGender),
     @required TResult loanApplicationNameChanged(String rawLoanApplicationName),
     @required TResult marriedStatusChanged(String rawMarriedStatus),
@@ -2542,6 +2838,7 @@ class _$_SaveData implements _SaveData {
     @required TResult propertyAreaChanged(String rawPropertyArea),
     @required TResult saveData(),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -2561,6 +2858,7 @@ class _$_SaveData implements _SaveData {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialised(Option<LoanApplicationInfo> initialLaInfoOption),
     TResult genderChanged(String rawGender),
     TResult loanApplicationNameChanged(String rawLoanApplicationName),
     TResult marriedStatusChanged(String rawMarriedStatus),
@@ -2586,6 +2884,7 @@ class _$_SaveData implements _SaveData {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialised(_Initialised value),
     @required TResult genderChanged(_GenderChanged value),
     @required
         TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
@@ -2602,6 +2901,7 @@ class _$_SaveData implements _SaveData {
     @required TResult propertyAreaChanged(_PropertyAreaChanged value),
     @required TResult saveData(_SaveData value),
   }) {
+    assert(initialised != null);
     assert(genderChanged != null);
     assert(loanApplicationNameChanged != null);
     assert(marriedStatusChanged != null);
@@ -2621,6 +2921,7 @@ class _$_SaveData implements _SaveData {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialised(_Initialised value),
     TResult genderChanged(_GenderChanged value),
     TResult loanApplicationNameChanged(_LoanApplicationNameChanged value),
     TResult marriedStatusChanged(_MarriedStatusChanged value),
@@ -2659,50 +2960,17 @@ class _$LoanApplicationStateTearOff {
       @required
           bool isSubmitting,
       @required
-          UniqueId applicationUniqueId,
+          bool isEditing,
       @required
-          LoanApplicationName loanApplicationName,
-      @required
-          Gender gender,
-      @required
-          Married married,
-      @required
-          Education education,
-      @required
-          SelfEmployed selfEmployed,
-      @required
-          Dependents dependents,
-      @required
-          ApplicantIncome applicantIncome,
-      @required
-          CoApplicantIncome coApplicantIncome,
-      @required
-          LoanAmount loanAmount,
-      @required
-          LoanTerm loanTerm,
-      @required
-          CreditHistory creditHistory,
-      @required
-          PropertyArea propertyArea,
+          LoanApplicationInfo loanApplicationInfo,
       @required
           Option<Either<LoanApplicationFailure, Unit>>
               loanFailureOrSuccessOption}) {
     return _LoanApplicationState(
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
-      applicationUniqueId: applicationUniqueId,
-      loanApplicationName: loanApplicationName,
-      gender: gender,
-      married: married,
-      education: education,
-      selfEmployed: selfEmployed,
-      dependents: dependents,
-      applicantIncome: applicantIncome,
-      coApplicantIncome: coApplicantIncome,
-      loanAmount: loanAmount,
-      loanTerm: loanTerm,
-      creditHistory: creditHistory,
-      propertyArea: propertyArea,
+      isEditing: isEditing,
+      loanApplicationInfo: loanApplicationInfo,
       loanFailureOrSuccessOption: loanFailureOrSuccessOption,
     );
   }
@@ -2716,19 +2984,8 @@ const $LoanApplicationState = _$LoanApplicationStateTearOff();
 mixin _$LoanApplicationState {
   bool get showErrorMessages;
   bool get isSubmitting;
-  UniqueId get applicationUniqueId;
-  LoanApplicationName get loanApplicationName;
-  Gender get gender;
-  Married get married;
-  Education get education;
-  SelfEmployed get selfEmployed;
-  Dependents get dependents;
-  ApplicantIncome get applicantIncome;
-  CoApplicantIncome get coApplicantIncome;
-  LoanAmount get loanAmount;
-  LoanTerm get loanTerm;
-  CreditHistory get creditHistory;
-  PropertyArea get propertyArea;
+  bool get isEditing;
+  LoanApplicationInfo get loanApplicationInfo;
   Option<Either<LoanApplicationFailure, Unit>> get loanFailureOrSuccessOption;
 
   @JsonKey(ignore: true)
@@ -2743,20 +3000,11 @@ abstract class $LoanApplicationStateCopyWith<$Res> {
   $Res call(
       {bool showErrorMessages,
       bool isSubmitting,
-      UniqueId applicationUniqueId,
-      LoanApplicationName loanApplicationName,
-      Gender gender,
-      Married married,
-      Education education,
-      SelfEmployed selfEmployed,
-      Dependents dependents,
-      ApplicantIncome applicantIncome,
-      CoApplicantIncome coApplicantIncome,
-      LoanAmount loanAmount,
-      LoanTerm loanTerm,
-      CreditHistory creditHistory,
-      PropertyArea propertyArea,
+      bool isEditing,
+      LoanApplicationInfo loanApplicationInfo,
       Option<Either<LoanApplicationFailure, Unit>> loanFailureOrSuccessOption});
+
+  $LoanApplicationInfoCopyWith<$Res> get loanApplicationInfo;
 }
 
 /// @nodoc
@@ -2772,19 +3020,8 @@ class _$LoanApplicationStateCopyWithImpl<$Res>
   $Res call({
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
-    Object applicationUniqueId = freezed,
-    Object loanApplicationName = freezed,
-    Object gender = freezed,
-    Object married = freezed,
-    Object education = freezed,
-    Object selfEmployed = freezed,
-    Object dependents = freezed,
-    Object applicantIncome = freezed,
-    Object coApplicantIncome = freezed,
-    Object loanAmount = freezed,
-    Object loanTerm = freezed,
-    Object creditHistory = freezed,
-    Object propertyArea = freezed,
+    Object isEditing = freezed,
+    Object loanApplicationInfo = freezed,
     Object loanFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -2793,41 +3030,26 @@ class _$LoanApplicationStateCopyWithImpl<$Res>
           : showErrorMessages as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      applicationUniqueId: applicationUniqueId == freezed
-          ? _value.applicationUniqueId
-          : applicationUniqueId as UniqueId,
-      loanApplicationName: loanApplicationName == freezed
-          ? _value.loanApplicationName
-          : loanApplicationName as LoanApplicationName,
-      gender: gender == freezed ? _value.gender : gender as Gender,
-      married: married == freezed ? _value.married : married as Married,
-      education:
-          education == freezed ? _value.education : education as Education,
-      selfEmployed: selfEmployed == freezed
-          ? _value.selfEmployed
-          : selfEmployed as SelfEmployed,
-      dependents:
-          dependents == freezed ? _value.dependents : dependents as Dependents,
-      applicantIncome: applicantIncome == freezed
-          ? _value.applicantIncome
-          : applicantIncome as ApplicantIncome,
-      coApplicantIncome: coApplicantIncome == freezed
-          ? _value.coApplicantIncome
-          : coApplicantIncome as CoApplicantIncome,
-      loanAmount:
-          loanAmount == freezed ? _value.loanAmount : loanAmount as LoanAmount,
-      loanTerm: loanTerm == freezed ? _value.loanTerm : loanTerm as LoanTerm,
-      creditHistory: creditHistory == freezed
-          ? _value.creditHistory
-          : creditHistory as CreditHistory,
-      propertyArea: propertyArea == freezed
-          ? _value.propertyArea
-          : propertyArea as PropertyArea,
+      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
+      loanApplicationInfo: loanApplicationInfo == freezed
+          ? _value.loanApplicationInfo
+          : loanApplicationInfo as LoanApplicationInfo,
       loanFailureOrSuccessOption: loanFailureOrSuccessOption == freezed
           ? _value.loanFailureOrSuccessOption
           : loanFailureOrSuccessOption
               as Option<Either<LoanApplicationFailure, Unit>>,
     ));
+  }
+
+  @override
+  $LoanApplicationInfoCopyWith<$Res> get loanApplicationInfo {
+    if (_value.loanApplicationInfo == null) {
+      return null;
+    }
+    return $LoanApplicationInfoCopyWith<$Res>(_value.loanApplicationInfo,
+        (value) {
+      return _then(_value.copyWith(loanApplicationInfo: value));
+    });
   }
 }
 
@@ -2841,20 +3063,12 @@ abstract class _$LoanApplicationStateCopyWith<$Res>
   $Res call(
       {bool showErrorMessages,
       bool isSubmitting,
-      UniqueId applicationUniqueId,
-      LoanApplicationName loanApplicationName,
-      Gender gender,
-      Married married,
-      Education education,
-      SelfEmployed selfEmployed,
-      Dependents dependents,
-      ApplicantIncome applicantIncome,
-      CoApplicantIncome coApplicantIncome,
-      LoanAmount loanAmount,
-      LoanTerm loanTerm,
-      CreditHistory creditHistory,
-      PropertyArea propertyArea,
+      bool isEditing,
+      LoanApplicationInfo loanApplicationInfo,
       Option<Either<LoanApplicationFailure, Unit>> loanFailureOrSuccessOption});
+
+  @override
+  $LoanApplicationInfoCopyWith<$Res> get loanApplicationInfo;
 }
 
 /// @nodoc
@@ -2872,19 +3086,8 @@ class __$LoanApplicationStateCopyWithImpl<$Res>
   $Res call({
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
-    Object applicationUniqueId = freezed,
-    Object loanApplicationName = freezed,
-    Object gender = freezed,
-    Object married = freezed,
-    Object education = freezed,
-    Object selfEmployed = freezed,
-    Object dependents = freezed,
-    Object applicantIncome = freezed,
-    Object coApplicantIncome = freezed,
-    Object loanAmount = freezed,
-    Object loanTerm = freezed,
-    Object creditHistory = freezed,
-    Object propertyArea = freezed,
+    Object isEditing = freezed,
+    Object loanApplicationInfo = freezed,
     Object loanFailureOrSuccessOption = freezed,
   }) {
     return _then(_LoanApplicationState(
@@ -2893,36 +3096,10 @@ class __$LoanApplicationStateCopyWithImpl<$Res>
           : showErrorMessages as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      applicationUniqueId: applicationUniqueId == freezed
-          ? _value.applicationUniqueId
-          : applicationUniqueId as UniqueId,
-      loanApplicationName: loanApplicationName == freezed
-          ? _value.loanApplicationName
-          : loanApplicationName as LoanApplicationName,
-      gender: gender == freezed ? _value.gender : gender as Gender,
-      married: married == freezed ? _value.married : married as Married,
-      education:
-          education == freezed ? _value.education : education as Education,
-      selfEmployed: selfEmployed == freezed
-          ? _value.selfEmployed
-          : selfEmployed as SelfEmployed,
-      dependents:
-          dependents == freezed ? _value.dependents : dependents as Dependents,
-      applicantIncome: applicantIncome == freezed
-          ? _value.applicantIncome
-          : applicantIncome as ApplicantIncome,
-      coApplicantIncome: coApplicantIncome == freezed
-          ? _value.coApplicantIncome
-          : coApplicantIncome as CoApplicantIncome,
-      loanAmount:
-          loanAmount == freezed ? _value.loanAmount : loanAmount as LoanAmount,
-      loanTerm: loanTerm == freezed ? _value.loanTerm : loanTerm as LoanTerm,
-      creditHistory: creditHistory == freezed
-          ? _value.creditHistory
-          : creditHistory as CreditHistory,
-      propertyArea: propertyArea == freezed
-          ? _value.propertyArea
-          : propertyArea as PropertyArea,
+      isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
+      loanApplicationInfo: loanApplicationInfo == freezed
+          ? _value.loanApplicationInfo
+          : loanApplicationInfo as LoanApplicationInfo,
       loanFailureOrSuccessOption: loanFailureOrSuccessOption == freezed
           ? _value.loanFailureOrSuccessOption
           : loanFailureOrSuccessOption
@@ -2936,35 +3113,13 @@ class _$_LoanApplicationState implements _LoanApplicationState {
   const _$_LoanApplicationState(
       {@required this.showErrorMessages,
       @required this.isSubmitting,
-      @required this.applicationUniqueId,
-      @required this.loanApplicationName,
-      @required this.gender,
-      @required this.married,
-      @required this.education,
-      @required this.selfEmployed,
-      @required this.dependents,
-      @required this.applicantIncome,
-      @required this.coApplicantIncome,
-      @required this.loanAmount,
-      @required this.loanTerm,
-      @required this.creditHistory,
-      @required this.propertyArea,
+      @required this.isEditing,
+      @required this.loanApplicationInfo,
       @required this.loanFailureOrSuccessOption})
       : assert(showErrorMessages != null),
         assert(isSubmitting != null),
-        assert(applicationUniqueId != null),
-        assert(loanApplicationName != null),
-        assert(gender != null),
-        assert(married != null),
-        assert(education != null),
-        assert(selfEmployed != null),
-        assert(dependents != null),
-        assert(applicantIncome != null),
-        assert(coApplicantIncome != null),
-        assert(loanAmount != null),
-        assert(loanTerm != null),
-        assert(creditHistory != null),
-        assert(propertyArea != null),
+        assert(isEditing != null),
+        assert(loanApplicationInfo != null),
         assert(loanFailureOrSuccessOption != null);
 
   @override
@@ -2972,37 +3127,15 @@ class _$_LoanApplicationState implements _LoanApplicationState {
   @override
   final bool isSubmitting;
   @override
-  final UniqueId applicationUniqueId;
+  final bool isEditing;
   @override
-  final LoanApplicationName loanApplicationName;
-  @override
-  final Gender gender;
-  @override
-  final Married married;
-  @override
-  final Education education;
-  @override
-  final SelfEmployed selfEmployed;
-  @override
-  final Dependents dependents;
-  @override
-  final ApplicantIncome applicantIncome;
-  @override
-  final CoApplicantIncome coApplicantIncome;
-  @override
-  final LoanAmount loanAmount;
-  @override
-  final LoanTerm loanTerm;
-  @override
-  final CreditHistory creditHistory;
-  @override
-  final PropertyArea propertyArea;
+  final LoanApplicationInfo loanApplicationInfo;
   @override
   final Option<Either<LoanApplicationFailure, Unit>> loanFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'LoanApplicationState(showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, applicationUniqueId: $applicationUniqueId, loanApplicationName: $loanApplicationName, gender: $gender, married: $married, education: $education, selfEmployed: $selfEmployed, dependents: $dependents, applicantIncome: $applicantIncome, coApplicantIncome: $coApplicantIncome, loanAmount: $loanAmount, loanTerm: $loanTerm, creditHistory: $creditHistory, propertyArea: $propertyArea, loanFailureOrSuccessOption: $loanFailureOrSuccessOption)';
+    return 'LoanApplicationState(showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, isEditing: $isEditing, loanApplicationInfo: $loanApplicationInfo, loanFailureOrSuccessOption: $loanFailureOrSuccessOption)';
   }
 
   @override
@@ -3015,44 +3148,12 @@ class _$_LoanApplicationState implements _LoanApplicationState {
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.applicationUniqueId, applicationUniqueId) ||
+            (identical(other.isEditing, isEditing) ||
                 const DeepCollectionEquality()
-                    .equals(other.applicationUniqueId, applicationUniqueId)) &&
-            (identical(other.loanApplicationName, loanApplicationName) ||
+                    .equals(other.isEditing, isEditing)) &&
+            (identical(other.loanApplicationInfo, loanApplicationInfo) ||
                 const DeepCollectionEquality()
-                    .equals(other.loanApplicationName, loanApplicationName)) &&
-            (identical(other.gender, gender) ||
-                const DeepCollectionEquality().equals(other.gender, gender)) &&
-            (identical(other.married, married) ||
-                const DeepCollectionEquality()
-                    .equals(other.married, married)) &&
-            (identical(other.education, education) ||
-                const DeepCollectionEquality()
-                    .equals(other.education, education)) &&
-            (identical(other.selfEmployed, selfEmployed) ||
-                const DeepCollectionEquality()
-                    .equals(other.selfEmployed, selfEmployed)) &&
-            (identical(other.dependents, dependents) ||
-                const DeepCollectionEquality()
-                    .equals(other.dependents, dependents)) &&
-            (identical(other.applicantIncome, applicantIncome) ||
-                const DeepCollectionEquality()
-                    .equals(other.applicantIncome, applicantIncome)) &&
-            (identical(other.coApplicantIncome, coApplicantIncome) ||
-                const DeepCollectionEquality()
-                    .equals(other.coApplicantIncome, coApplicantIncome)) &&
-            (identical(other.loanAmount, loanAmount) ||
-                const DeepCollectionEquality()
-                    .equals(other.loanAmount, loanAmount)) &&
-            (identical(other.loanTerm, loanTerm) ||
-                const DeepCollectionEquality()
-                    .equals(other.loanTerm, loanTerm)) &&
-            (identical(other.creditHistory, creditHistory) ||
-                const DeepCollectionEquality()
-                    .equals(other.creditHistory, creditHistory)) &&
-            (identical(other.propertyArea, propertyArea) ||
-                const DeepCollectionEquality()
-                    .equals(other.propertyArea, propertyArea)) &&
+                    .equals(other.loanApplicationInfo, loanApplicationInfo)) &&
             (identical(other.loanFailureOrSuccessOption,
                     loanFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -3065,19 +3166,8 @@ class _$_LoanApplicationState implements _LoanApplicationState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(applicationUniqueId) ^
-      const DeepCollectionEquality().hash(loanApplicationName) ^
-      const DeepCollectionEquality().hash(gender) ^
-      const DeepCollectionEquality().hash(married) ^
-      const DeepCollectionEquality().hash(education) ^
-      const DeepCollectionEquality().hash(selfEmployed) ^
-      const DeepCollectionEquality().hash(dependents) ^
-      const DeepCollectionEquality().hash(applicantIncome) ^
-      const DeepCollectionEquality().hash(coApplicantIncome) ^
-      const DeepCollectionEquality().hash(loanAmount) ^
-      const DeepCollectionEquality().hash(loanTerm) ^
-      const DeepCollectionEquality().hash(creditHistory) ^
-      const DeepCollectionEquality().hash(propertyArea) ^
+      const DeepCollectionEquality().hash(isEditing) ^
+      const DeepCollectionEquality().hash(loanApplicationInfo) ^
       const DeepCollectionEquality().hash(loanFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
@@ -3094,31 +3184,9 @@ abstract class _LoanApplicationState implements LoanApplicationState {
       @required
           bool isSubmitting,
       @required
-          UniqueId applicationUniqueId,
+          bool isEditing,
       @required
-          LoanApplicationName loanApplicationName,
-      @required
-          Gender gender,
-      @required
-          Married married,
-      @required
-          Education education,
-      @required
-          SelfEmployed selfEmployed,
-      @required
-          Dependents dependents,
-      @required
-          ApplicantIncome applicantIncome,
-      @required
-          CoApplicantIncome coApplicantIncome,
-      @required
-          LoanAmount loanAmount,
-      @required
-          LoanTerm loanTerm,
-      @required
-          CreditHistory creditHistory,
-      @required
-          PropertyArea propertyArea,
+          LoanApplicationInfo loanApplicationInfo,
       @required
           Option<Either<LoanApplicationFailure, Unit>>
               loanFailureOrSuccessOption}) = _$_LoanApplicationState;
@@ -3128,31 +3196,9 @@ abstract class _LoanApplicationState implements LoanApplicationState {
   @override
   bool get isSubmitting;
   @override
-  UniqueId get applicationUniqueId;
+  bool get isEditing;
   @override
-  LoanApplicationName get loanApplicationName;
-  @override
-  Gender get gender;
-  @override
-  Married get married;
-  @override
-  Education get education;
-  @override
-  SelfEmployed get selfEmployed;
-  @override
-  Dependents get dependents;
-  @override
-  ApplicantIncome get applicantIncome;
-  @override
-  CoApplicantIncome get coApplicantIncome;
-  @override
-  LoanAmount get loanAmount;
-  @override
-  LoanTerm get loanTerm;
-  @override
-  CreditHistory get creditHistory;
-  @override
-  PropertyArea get propertyArea;
+  LoanApplicationInfo get loanApplicationInfo;
   @override
   Option<Either<LoanApplicationFailure, Unit>> get loanFailureOrSuccessOption;
   @override

@@ -13,7 +13,6 @@ class ForgotPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      //resizeToAvoidBottomInset: false,
       body: BlocProvider(
         create: (context) => getIt<SignInFormBloc>(),
         child: Stack(
@@ -46,9 +45,12 @@ ClipPath buildUpperSection(Size screenSize, BuildContext context) {
   return ClipPath(
     clipper: ForgotPasswordPageClipper(),
     child: Container(
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage("assets/images/forgot_password.jpg"))),
       height: screenSize.height / 2,
       width: screenSize.width,
-      color: ConstantColors.primaryColor,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -160,35 +162,38 @@ class PasswordResetForm extends StatelessWidget {
             autovalidateMode: state.showErrorMessages == true
                 ? AutovalidateMode.always
                 : AutovalidateMode.disabled,
-            child: ListView(
-                //physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.fromLTRB(25, 5, 25, 15),
-                children: [
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  buildEmailIdFormField(context, primaryColor),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  buildPasswordFormField(context),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  buildConfirmPasswordFormField(context),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  buildresetButton(primaryColor, context),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  buildOrDivider(secondaryColor),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  buildLoginInButton(secondaryColor, primaryColor, context),
-                ]),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              padding: const EdgeInsets.fromLTRB(25, 5, 25, 15),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const SizedBox(
+                      height: 17,
+                    ),
+                    buildEmailIdFormField(context, primaryColor),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    buildPasswordFormField(context),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    buildConfirmPasswordFormField(context),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    buildresetButton(primaryColor, context),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    buildOrDivider(secondaryColor),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    buildLoginInButton(secondaryColor, primaryColor, context),
+                  ]),
+            ),
           ),
         );
         ;

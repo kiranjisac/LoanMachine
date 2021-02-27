@@ -31,7 +31,7 @@ Column buildsignInForm(Size screenSize) {
       SizedBox(
         height: screenSize.height * 0.45 - 10,
       ),
-      Expanded(child: SignUpForm()),
+      const Expanded(child: SignUpForm()),
     ],
   );
 }
@@ -40,9 +40,12 @@ ClipPath buildUpperSection(Size screenSize, BuildContext context) {
   return ClipPath(
     clipper: SignUpPageClipper(),
     child: Container(
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage("assets/images/sign_up.jpg"))),
       height: screenSize.height * 0.45,
       width: screenSize.width,
-      color: ConstantColors.primaryColor,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -150,28 +153,30 @@ class SignUpForm extends StatelessWidget {
             autovalidateMode: state.showErrorMessages == true
                 ? AutovalidateMode.always
                 : AutovalidateMode.disabled,
-            child: ListView(
-                physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.fromLTRB(25, 5, 25, 15),
-                children: [
-                  const SizedBox(height: 10),
-                  buildUserNameFormField(primaryColor, context),
-                  const SizedBox(height: 10),
-                  buildEmailIDFormField(context, primaryColor),
-                  const SizedBox(height: 10),
-                  buildPasswordFormField(context, primaryColor),
-                  const SizedBox(height: 10),
-                  buildConfirmPasswordFormField(context, primaryColor),
-                  const SizedBox(height: 25),
-                  buildSignUpButton(primaryColor, context),
-                  const SizedBox(height: 10),
-                  buildOrDivider(secondaryColor),
-                  const SizedBox(height: 10),
-                  buildLoginInButton(secondaryColor, primaryColor, context)
-                ]),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              padding: const EdgeInsets.fromLTRB(25, 5, 25, 15),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const SizedBox(height: 5),
+                    buildUserNameFormField(primaryColor, context),
+                    const SizedBox(height: 10),
+                    buildEmailIDFormField(context, primaryColor),
+                    const SizedBox(height: 10),
+                    buildPasswordFormField(context, primaryColor),
+                    const SizedBox(height: 10),
+                    buildConfirmPasswordFormField(context, primaryColor),
+                    const SizedBox(height: 25),
+                    buildSignUpButton(primaryColor, context),
+                    const SizedBox(height: 10),
+                    buildOrDivider(secondaryColor),
+                    const SizedBox(height: 10),
+                    buildLoginInButton(secondaryColor, primaryColor, context)
+                  ]),
+            ),
           ),
         );
-        ;
       },
     );
   }

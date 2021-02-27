@@ -23,23 +23,25 @@ abstract class LoanApplicationInfo implements _$LoanApplicationInfo {
       @required CreditHistory creditHistory,
       @required PropertyArea propertyArea,
       @required ApplicantIncome applicantIncome,
-      @required CoApplicantIncome coApplicantIncome}) = _LoanApplicationInfo;
+      @required CoApplicantIncome coApplicantIncome,
+      String loanStatus}) = _LoanApplicationInfo;
 
   factory LoanApplicationInfo.empty() => LoanApplicationInfo(
-      applicationUniqueId: UniqueId(),
-      appicantUniqueId: UniqueId(),
-      loanApplicationName: LoanApplicationName(""),
-      gender: Gender(""),
-      selfEmployed: SelfEmployed(""),
-      married: Married(""),
-      education: Education(""),
-      loanAmount: LoanAmount(""),
-      loanTerm: LoanTerm(0),
-      dependents: Dependents(0),
-      creditHistory: CreditHistory(""),
-      propertyArea: PropertyArea(""),
-      applicantIncome: ApplicantIncome(""),
-      coApplicantIncome: CoApplicantIncome(""));
+        applicationUniqueId: UniqueId(),
+        appicantUniqueId: UniqueId(),
+        loanApplicationName: LoanApplicationName(""),
+        gender: Gender(""),
+        selfEmployed: SelfEmployed(""),
+        married: Married(""),
+        education: Education(""),
+        loanAmount: LoanAmount(""),
+        loanTerm: LoanTerm(0),
+        dependents: Dependents(-1),
+        creditHistory: CreditHistory(""),
+        propertyArea: PropertyArea(""),
+        applicantIncome: ApplicantIncome(""),
+        coApplicantIncome: CoApplicantIncome(""),
+      );
 
   Option<ValueFailure<dynamic>> get failureOption {
     return gender.failureorUnit
@@ -53,6 +55,7 @@ abstract class LoanApplicationInfo implements _$LoanApplicationInfo {
         .andThen(coApplicantIncome.failureorUnit)
         .andThen(propertyArea.failureorUnit)
         .andThen(creditHistory.failureorUnit)
+        .andThen(loanApplicationName.failureorUnit)
         .fold((f) => some(f), (_) => none());
   }
 

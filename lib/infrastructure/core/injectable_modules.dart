@@ -37,7 +37,8 @@ abstract class RegisterModule {
          ${Constants.loanColumnTerm} TEXT NOT NULL,
          ${Constants.loanColumnAmount} TEXT NOT NULL,
          ${Constants.loanColumnCreditHistory} TEXT NOT NULL,
-         ${Constants.loanColumnPropertyArea} TEXT NOT NULL)
+         ${Constants.loanColumnPropertyArea} TEXT NOT NULL,
+         ${Constants.loanColumnLoanStatus} TEXT)
            ''');
     }
 

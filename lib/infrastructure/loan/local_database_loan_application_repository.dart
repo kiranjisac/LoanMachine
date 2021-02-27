@@ -5,6 +5,7 @@ import 'package:loan_machine/domain/core/value_object.dart';
 import 'package:loan_machine/domain/loan/i_loan_application_repository.dart';
 import 'package:loan_machine/domain/loan/loan_application_info.dart';
 import 'package:loan_machine/domain/loan/loan_application_failure.dart';
+import 'package:loan_machine/infrastructure/core/utils.dart';
 import 'package:loan_machine/infrastructure/database/local_database_helper.dart';
 import 'package:loan_machine/infrastructure/loan/loan_application_info_dto.dart';
 import 'package:loan_machine/infrastructure/loan/loan_local_database_helper.dart';
@@ -22,8 +23,9 @@ class LocalLoanApplicationRepository implements ILoanApplicationRepository {
     final loanApplicationInfoDto =
         LoanApplicationInfoDto.fromDomain(loanApplicationInfo);
 
-    final successOrFailure =
-        await databaseHelper.insert(loanApplicationInfoDto.toMap());
+    final successOrFailure = await databaseHelper.insert(loanApplicationInfoDto
+        .copyWith(loanStatus: Loanee.predict(loanApplicationInfoDto).toString())
+        .toMap());
 
     return successOrFailure.fold(
         (f) => f.map(
@@ -39,7 +41,10 @@ class LocalLoanApplicationRepository implements ILoanApplicationRepository {
         LoanApplicationInfoDto.fromDomain(loanApplicationInfo);
 
     final successOrFailure = await databaseHelper.update(
-        loanApplicationInfoDto.toMap(),
+        loanApplicationInfoDto
+            .copyWith(
+                loanStatus: Loanee.predict(loanApplicationInfoDto).toString())
+            .toMap(),
         loanApplicationInfoDto.applicationUniqueId);
 
     return successOrFailure.fold(
