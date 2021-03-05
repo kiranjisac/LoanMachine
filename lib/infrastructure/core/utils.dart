@@ -1,8 +1,6 @@
-import 'dart:io';
 import 'dart:math';
 
 import 'package:kt_dart/collection.dart';
-import 'package:loan_machine/domain/loan/loan_application_info.dart';
 import 'package:loan_machine/infrastructure/loan/loan_application_info_dto.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -58,19 +56,6 @@ class Loanee {
     KtList<double> x =
         [x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10].toImmutableList();
 
-    // List<double> x_values = [
-    //   1.0,
-    //   0.0,
-    //   0.0,
-    // 1,
-    //   0.0,
-    //   10849,
-    //   1508.0,
-    //   128.000000,
-    //   360.0,
-    //   1.0,
-    //   2.0
-    // ];
     double z = 0;
 
     for (int i = 0; i <= 10; i++) {

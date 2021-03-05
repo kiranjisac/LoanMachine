@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.loan_machine">
+    package="com.kiranjisac.loanee">
+   <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="loan_machine"
+        android:label="LoanEe"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

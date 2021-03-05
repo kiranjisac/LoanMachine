@@ -1,4 +1,4 @@
-package com.example.loan_machine
+package com.kiranjisac.loanee
 
 import io.flutter.embedding.android.FlutterActivity
 

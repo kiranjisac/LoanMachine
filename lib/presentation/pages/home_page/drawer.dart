@@ -1,6 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:dartz/dartz.dart';
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +9,6 @@ import 'package:loan_machine/domain/core/errors.dart';
 import 'package:loan_machine/infrastructure/core/constants.dart';
 import 'package:loan_machine/infrastructure/core/utils.dart';
 import 'package:loan_machine/presentation/routes/router.gr.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../injection.dart';
 

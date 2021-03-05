@@ -103,7 +103,7 @@ class HomePage extends StatelessWidget {
       foregroundColor: Colors.blue,
       elevation: 2.5,
       title: Text(
-        "Loan Machine",
+        "LoanEe",
         style: GoogleFonts.lato(
             color: ConstantColors.primaryColor,
             fontSize: 23,

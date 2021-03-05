@@ -245,15 +245,34 @@ class ApplicationInfoCard extends StatelessWidget {
                               ),
                               (loanApplications[index].loanStatus == null)
                                   ? Text("N/A")
-                                  : Text(double.parse(loanApplications[index]
+                                  : double.parse(loanApplications[index]
                                               .loanStatus) <
-                                          0.35
-                                      ? "Sorry ,No chance"
+                                          0.34
+                                      ? const Text(
+                                          "Sorry ,Can't help it",
+                                          style: TextStyle(color: Colors.red),
+                                        )
                                       : double.parse(loanApplications[index]
                                                   .loanStatus) <
                                               0.5
-                                          ? "Bter luck nxt time"
-                                          : "Congrats"),
+                                          ? const Text(
+                                              "You're Out by margin",
+                                              style: TextStyle(
+                                                  color: Colors.orange),
+                                            )
+                                          : double.parse(loanApplications[index]
+                                                      .loanStatus) <
+                                                  0.7
+                                              ? const Text(
+                                                  "Lucky Streak, Won It",
+                                                  style: TextStyle(
+                                                      color: Colors.cyan),
+                                                )
+                                              : const Text(
+                                                  "Congrats and Approved",
+                                                  style: TextStyle(
+                                                      color: Colors.green),
+                                                )
                             ],
                           ),
                         ),
