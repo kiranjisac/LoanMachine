@@ -1,7 +1,5 @@
 # loan_machine
-
-A new Flutter project.
-
+Implements logistic regression model to predict whether a loan application will be approved or rejected 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
